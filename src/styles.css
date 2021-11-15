@@ -2,9 +2,13 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Genos', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 #home-bg {
@@ -39,6 +43,10 @@ body {
     background: linear-gradient(to right, #4b5ed0, #242e5c);
 }
 
+.text-lightest {
+    color: #475acc;
+}
+
 .text-light {
     color: #4b5ed0;
 }
@@ -57,4 +65,70 @@ body {
 
 .text-darkest {
     color: #06070d;
+}
+
+.border-light {
+    border-color: #4b5ed0;
+}
+
+.border-medium {
+    border-color: #242e5c;
+}
+
+.border-dark {
+    border-color: #1d2446;
+}
+
+.border-darker {
+    border-color: #10141f;;
+}
+
+.border-darkest {
+    border-color: #06070d;
+}
+
+.hover-light:hover {
+    background-color: #4b5ed0;
+}
+
+.hover-medium:hover {
+    background-color: #242e5c;
+}
+
+.hover-dark:hover {
+    background-color: #1d2446;
+}
+
+.hover-darker:hover {
+    background-color: #10141f;
+}
+
+.hover-darkest:hover {
+    background-color: #06070d;
+}
+
+.hover-text-light:hover {
+    color: #4b5ed0;
+}
+
+.hover-text-medium:hover {
+    color: #242e5c;
+}
+
+.hover-text-dark:hover {
+    color: #1d2446;
+}
+
+.hover-text-darker:hover {
+    color: #10141f;;
+}
+
+.hover-text-darkest:hover {
+    color: #06070d;
+}
+
+/*Other*/
+
+.box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
