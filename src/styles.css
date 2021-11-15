@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#home-bg {
+    min-height: 100vh;
+    background: url("./assets/images/6230956.jpg") center no-repeat;
+    background-size: cover;
+}
+
+/*Colors*/
+
+.light {
+    background-color: #4b5ed0;
+}
+
+.medium {
+    background-color: #242e5c;
+}
+
+.dark {
+    background-color: #1d2446;
+}
+
+.darker {
+    background-color: #10141f;
+}
+
+.darkest {
+    background-color: #06070d;
+}
+
+.gradient {
+    background: linear-gradient(to right, #4b5ed0, #242e5c);
+}
+
+.text-light {
+    color: #4b5ed0;
+}
+
+.text-medium {
+    color: #242e5c;
+}
+
+.text-dark {
+    color: #1d2446;
+}
+
+.text-darker {
+    color: #10141f;;
+}
+
+.text-darkest {
+    color: #06070d;
+}
