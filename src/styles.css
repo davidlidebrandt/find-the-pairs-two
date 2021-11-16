@@ -127,6 +127,20 @@ body {
     color: #06070d;
 }
 
+/*Utilities*/
+
+.center-abs-xy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-fixed-x {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /*Other*/
 
 .box-shadow {
