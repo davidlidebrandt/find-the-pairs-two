@@ -12,4 +12,6 @@ export class TimerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  timeRunningOut: boolean = false;
+
 }
