@@ -146,3 +146,12 @@ body {
 .box-shadow {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+
+.perspective {
+    box-sizing: border-box;
+    perspective: 1000px;
+}
+
+.perspective-inner {
+    transform: perspective(60em) rotateY(30deg);
+}

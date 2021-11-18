@@ -13,7 +13,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { GamenavComponent } from './components/gamenav/gamenav.component';
 import { GamewindowComponent } from './components/gamewindow/gamewindow.component';
 import { TimerComponent } from './components/timer/timer.component';
-import { ScoreComponent } from './components/score/score.component'
+import { ScoreComponent } from './components/score/score.component';
+import { CardwindowComponent } from './components/cardwindow/cardwindow.component';
+import { CardComponent } from './components/card/card.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ScoreComponent } from './components/score/score.component'
     GamenavComponent,
     GamewindowComponent,
     TimerComponent,
-    ScoreComponent
+    ScoreComponent,
+    CardwindowComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
