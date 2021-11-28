@@ -153,5 +153,17 @@ body {
 }
 
 .perspective-inner {
-    transform: perspective(60em) rotateY(30deg);
+    transition: all;
+    transition-duration: 1000ms;
+    transform-style: preserve-3d;
+    transition-delay: 700ms;
+    transform: perspective(60em) rotateY(40deg);
+}
+
+.perspective-inner:hover {
+    transition: all;
+    transition-duration: 1000ms;
+    transform-style: preserve-3d;
+    transition-delay: 700ms;
+    transform: perspective(0) rotateY(0);
 }
