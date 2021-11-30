@@ -8,8 +8,8 @@ import { CardComponent } from '../card/card.component';
 })
 export class CardwindowComponent implements OnInit {
 
-  icons: string[] = ['favorite', 'favorite', 'thumb_up', 'thumb_up', 'help', 'help', 'lightbulb', 'lightbulb'
-  ,'star_rate', 'star_rate', 'pets', 'pets', 'nightlight_round', 'nightlight_round', 'offline_bolt', 'offline_bolt', 'settings_input_hdmi', 'settings_input_hdmi'
+  icons: string[] = ['favorite', 'favorite', 'group_work', 'group_work', 'filter_alt', 'filter_alt', 'lightbulb', 'lightbulb'
+  ,'star_rate', 'star_rate', 'pets', 'pets', 'pending', 'pending', 'offline_bolt', 'offline_bolt', 'settings_input_hdmi', 'settings_input_hdmi'
 ]
 
   shuffleCards(array: string[]) {

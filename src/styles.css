@@ -158,8 +158,8 @@ body {
     transform: perspective(60em) rotateY(40deg);
 }
 
-.perspective-inner:hover {
+.perspective-inner-turn {
     transition: all;
     transition-duration: 1400ms;
-    transform: perspective(60em) rotateY(-40deg);
+    transform: perspective(60em) rotateY(-180deg);
 }
