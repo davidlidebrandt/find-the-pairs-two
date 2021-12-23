@@ -13,10 +13,17 @@ export class WindowComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  scoresHidden: boolean = true;
+  mainWindowHidden: boolean = false;
 
-  openSettings() {
-    this.scoresHidden = !this.scoresHidden;
+  toggleMainWindowHidden() {
+    this.mainWindowHidden = !this.mainWindowHidden;
+  }
+
+  settingsHidden: boolean = true;
+
+  toggleSettings() {
+    this.settingsHidden = !this.settingsHidden;
+    this.toggleMainWindowHidden();
   }
 
   hoveredStartGame: boolean = false;

@@ -15,7 +15,8 @@ import { GamewindowComponent } from './components/gamewindow/gamewindow.componen
 import { TimerComponent } from './components/timer/timer.component';
 import { ScoreComponent } from './components/score/score.component';
 import { CardwindowComponent } from './components/cardwindow/cardwindow.component';
-import { CardComponent } from './components/card/card.component'
+import { CardComponent } from './components/card/card.component';
+import { SettingsmodalComponent } from './components/settingsmodal/settingsmodal.component'
 
 @NgModule({
   declarations: [
@@ -29,12 +30,13 @@ import { CardComponent } from './components/card/card.component'
     TimerComponent,
     ScoreComponent,
     CardwindowComponent,
-    CardComponent
+    CardComponent,
+    SettingsmodalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
