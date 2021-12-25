@@ -17,6 +17,44 @@ body {
     background-size: cover;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background:#fff;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+  }
+
+#how-to-text::-webkit-scrollbar-track:hover {
+  }
+
+
+#how-to-text::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+#how-to-text::-webkit-scrollbar-thumb {
+    background-color: #242e5c;
+    border-radius: 6px;
+  }
+
+#how-to-text::-webkit-scrollbar-thumb:hover {
+    background: #4b5ed0;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #242e5c;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b5ed0;
+  }
+
 /*Colors*/
 
 .light {
