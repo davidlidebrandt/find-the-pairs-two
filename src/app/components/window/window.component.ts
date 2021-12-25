@@ -26,6 +26,13 @@ export class WindowComponent implements OnInit {
     this.toggleMainWindowHidden();
   }
 
+  howToHidden: boolean = true;
+
+  toggleHowTo() {
+    this.howToHidden = !this.howToHidden;
+    this.toggleMainWindowHidden();
+  }
+
   hoveredStartGame: boolean = false;
 
   animateStartGame() {

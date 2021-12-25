@@ -16,7 +16,8 @@ import { TimerComponent } from './components/timer/timer.component';
 import { ScoreComponent } from './components/score/score.component';
 import { CardwindowComponent } from './components/cardwindow/cardwindow.component';
 import { CardComponent } from './components/card/card.component';
-import { SettingsmodalComponent } from './components/settingsmodal/settingsmodal.component'
+import { SettingsmodalComponent } from './components/settingsmodal/settingsmodal.component';
+import { HowtomodalComponent } from './components/howtomodal/howtomodal.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SettingsmodalComponent } from './components/settingsmodal/settingsmodal
     ScoreComponent,
     CardwindowComponent,
     CardComponent,
-    SettingsmodalComponent
+    SettingsmodalComponent,
+    HowtomodalComponent
   ],
   imports: [
     BrowserModule,

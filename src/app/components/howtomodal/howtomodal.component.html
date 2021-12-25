@@ -1,0 +1,24 @@
+<div
+  [ngClass]="{ hidden: howToHidden}"
+  class="
+    relative
+    rounded
+    dark
+    border
+    border-light
+    min-h-[70vh]
+  "
+>
+  <h3 class="font-bold text-center text-2xl text-white darker rounded-tl p-3">
+    How To Play
+  </h3>
+
+  <button
+      (click)="closeHowClick()"
+      class="text-white text-center font-bold rounded hover-text-light absolute bottom-1 right-2"
+    >
+        <span class="material-icons text-5xl">
+            close
+        </span>
+    </button>
+</div>
