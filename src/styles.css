@@ -186,6 +186,10 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
+.box-shadow-2 {
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+}
+
 .perspective {
     box-sizing: border-box;
     perspective: 1000px;
