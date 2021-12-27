@@ -1,10 +1,12 @@
 <div
   [ngClass]="{ hidden: settingsHidden }"
   class="
+    relative
     rounded
     dark
     box-shadow-2 
     border-light
+    min-h-[70vh]
   "
 >
   <h3 class="font-bold text-center text-2xl text-white darker rounded-tl p-3">
@@ -14,7 +16,7 @@
     <div class="pb-6 light text-center rounded w-full">
       <fieldset class="text-white">
         <legend
-          class="font-bold gradient block rounded-t p-2 w-full text-xl mb-4"
+          class="font-bold block rounded-t p-2 w-full text-xl mb-4"
         >
           Sound <span class="material-icons align-middle">volume_down</span>
         </legend>
@@ -47,7 +49,6 @@
           text-white
           font-bold
           mb-4
-          gradient
           p-2
           block
           w-full
@@ -77,16 +78,16 @@
         <option class="font-bold" value="hard">Hard</option>
       </select>
     </div>
-    <button
-      class="text-white font-bold light mt-8 py-3 m-auto w-5/6 rounded hover-medium"
-    >
-      Save
-    </button>
+    <div class="m-3 pb-6 light text-center rounded w-full">
+
+    </div>
     <button
       (click)="closeModalClick()"
-      class="text-white font-bold block darkest py-3 m-auto w-5/6 mt-5 rounded hover-medium"
+      class="text-white text-center font-bold rounded hover-text-darkest absolute bottom-1 right-2"
     >
-      Cancel
+    <span class="material-icons text-5xl">
+      close
+    </span>
     </button>
   </div>
 </div>

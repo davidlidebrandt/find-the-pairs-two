@@ -26,12 +26,6 @@ body {
     background:#fff;
   }
 
-  ::-webkit-scrollbar-track:hover {
-  }
-
-#how-to-text::-webkit-scrollbar-track:hover {
-  }
-
 
 #how-to-text::-webkit-scrollbar-track {
   background-color: #fff;
