@@ -1,5 +1,19 @@
-<div class="gradient min-h-full w-full rounded grid grid-cols-12 grid-rows-6 border-8 border-light px-8 py-4">
-    <app-timer class="col-span-6 row-span-1"></app-timer>
-    <app-score class="col-span-6 row-span-1"></app-score>
-    <app-cardwindow class="col-span-12 row-span-5 h-full"></app-cardwindow>
+<div class="dark min-h-full w-full rounded grid grid-cols-12 border-8 border-light px-8 pb-4">
+    <app-timer class="col-span-6 order-1 sm:order-none sm:col-span-3 text-center"></app-timer>
+    <div class="col-span-12 order-3 sm:order-none sm:col-span-3 sm:text-right mx-2">
+        <button class="mt-4 box-shadow font-bold medium text-white py-2 px-3 w-full sm:w-5/6 rounded hover-text-darkest hover-light transition-all duration-700">Home
+            <span class="material-icons align-bottom ml-2">
+                home
+            </span>
+        </button>
+    </div>
+    <div class="col-span-12 order-4 sm:order-none sm:col-span-3 sm:text-left mx-2">
+        <button class="my-4 box-shadow font-bold text-white py-2 px-3  w-full sm:w-5/6  rounded darkest hover-text-darkest hover-light transition-all duration-700">Restart Game
+            <span class="material-icons align-bottom">
+                restart_alt
+            </span>
+        </button>
+    </div>
+    <app-score class="col-span-6 order-2 sm:order-none sm:col-span-3 text-right"></app-score>
+    <app-cardwindow class="col-span-12 order-last sm:order-none h-full"></app-cardwindow>
 </div>

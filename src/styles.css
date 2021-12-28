@@ -17,6 +17,11 @@ body {
     background-size: cover;
 }
 
+#cardw-bg {
+    background: url("./assets/images/6230956.jpg") center no-repeat;
+    background-size: cover;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 16px;
