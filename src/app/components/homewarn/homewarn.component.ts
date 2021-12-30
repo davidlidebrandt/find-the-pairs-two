@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,12 @@ export class HomewarnComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  homeWarnOpen: boolean = true;
+
+  cancelReturnHome() {
+    this.homeWarnOpen = !this.homeWarnOpen;
   }
 
 }
