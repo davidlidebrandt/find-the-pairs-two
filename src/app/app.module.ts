@@ -18,7 +18,8 @@ import { CardwindowComponent } from './components/cardwindow/cardwindow.componen
 import { CardComponent } from './components/card/card.component';
 import { SettingsmodalComponent } from './components/settingsmodal/settingsmodal.component';
 import { HowtomodalComponent } from './components/howtomodal/howtomodal.component';
-import { HeaderComponent } from './components/header/header.component'
+import { HeaderComponent } from './components/header/header.component';
+import { HomewarnComponent } from './components/homewarn/homewarn.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HeaderComponent } from './components/header/header.component'
     CardComponent,
     SettingsmodalComponent,
     HowtomodalComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomewarnComponent
   ],
   imports: [
     BrowserModule,
