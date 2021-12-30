@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-gamewindow',
@@ -10,6 +10,14 @@ export class GamewindowComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Input() homeWarnClosed!:boolean;
+
+  @Output() openReturnHomeModal = new EventEmitter();
+
+  openReturnHome() {
+    this.openReturnHomeModal.emit();
   }
 
 }

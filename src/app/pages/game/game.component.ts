@@ -12,4 +12,10 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  homeWarnClosed: boolean = true;
+
+  toggleReturnHome() {
+    this.homeWarnClosed = !this.homeWarnClosed;
+  }
+
 }

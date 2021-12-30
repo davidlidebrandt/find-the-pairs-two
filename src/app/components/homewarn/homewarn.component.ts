@@ -1,5 +1,4 @@
-import { ThrowStmt } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-homewarn',
@@ -13,10 +12,12 @@ export class HomewarnComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  homeWarnOpen: boolean = true;
+  @Input() homeWarnClosed!:boolean ;
 
-  cancelReturnHome() {
-    this.homeWarnOpen = !this.homeWarnOpen;
+  @Output() closeReturnHomeModal = new EventEmitter();
+
+  closeReturnHome() {
+    this.closeReturnHomeModal.emit();
   }
 
 }
