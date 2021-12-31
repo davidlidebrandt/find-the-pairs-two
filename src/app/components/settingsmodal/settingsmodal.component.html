@@ -20,21 +20,25 @@
         >
           Sound <span class="material-icons align-middle">volume_down</span>
         </legend>
-        <div class="dark w-1/3 inline-block m-auto rounded p-2">
-          <label class="font-bold" for="sound-off">Off</label>
+        <div (click)="clickSoundOff()" class="dark w-1/3 inline-block m-auto rounded p-2 cursor-pointer">
+          <label class="font-bold" for="sound-off">
+            <span class="cursor-pointer">Off</span>
+          </label>
           <input
             checked
-            class="mx-2"
+            class="mx-2 cursor-pointer"
             type="radio"
             id="sound-off"
             name="sound"
             value="off"
           />
         </div>
-        <div class="dark w-1/3 m-auto mx-3 inline-block rounded p-2">
-          <label class="font-bold" for="sound-on ml-3 font-bold">On</label>
+        <div class="dark w-1/3 m-auto mx-3 inline-block rounded p-2 cursor-pointer">
+          <label class="font-bold" for="sound-on ml-3 font-bold">
+            <span class="cursor-pointer">On</span>
+          </label>
           <input
-            class="mx-2"
+            class="mx-2 cursor-pointer"
             type="radio"
             id="sound-on"
             name="sound"
@@ -69,6 +73,7 @@
           rounded
           text-center
           p-2
+          cursor-pointer
         "
         name="level"
         id="level"

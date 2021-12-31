@@ -20,4 +20,12 @@ export class SettingsmodalComponent implements OnInit {
     this.closeModal.emit();
   }
 
+  clickSoundOff():void {
+    const soundOffInput = document.querySelector("#sound-off");
+    if (soundOffInput != null) {
+      soundOffInput.setAttribute("checked", "true")
+    }
+    
+  }
+
 }

@@ -19,7 +19,8 @@ import { CardComponent } from './components/card/card.component';
 import { SettingsmodalComponent } from './components/settingsmodal/settingsmodal.component';
 import { HowtomodalComponent } from './components/howtomodal/howtomodal.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomewarnComponent } from './components/homewarn/homewarn.component'
+import { HomewarnComponent } from './components/homewarn/homewarn.component';
+import { RestartwarnComponent } from './components/restartwarn/restartwarn.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HomewarnComponent } from './components/homewarn/homewarn.component'
     SettingsmodalComponent,
     HowtomodalComponent,
     HeaderComponent,
-    HomewarnComponent
+    HomewarnComponent,
+    RestartwarnComponent
   ],
   imports: [
     BrowserModule,
