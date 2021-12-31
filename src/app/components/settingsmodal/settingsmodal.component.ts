@@ -21,11 +21,21 @@ export class SettingsmodalComponent implements OnInit {
   }
 
   clickSoundOff():void {
-    const soundOffInput = document.querySelector("#sound-off");
+    const soundOffInput = document.getElementById("sound-off");
     if (soundOffInput != null) {
-      soundOffInput.setAttribute("checked", "true")
+      soundOffInput.click();
     }
     
   }
+
+  clickSoundOn():void {
+    const soundOnInput = document.getElementById("sound-on");
+    if (soundOnInput != null) {
+      soundOnInput.click();
+    }
+    
+  }
+
+  
 
 }
