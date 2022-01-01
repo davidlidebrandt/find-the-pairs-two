@@ -36,6 +36,10 @@ export class SettingsmodalComponent implements OnInit {
     
   }
 
+  changeSettings($event:any):void {
+    $event.preventDefault();
+  }
+
   
 
 }

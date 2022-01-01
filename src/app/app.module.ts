@@ -20,7 +20,9 @@ import { SettingsmodalComponent } from './components/settingsmodal/settingsmodal
 import { HowtomodalComponent } from './components/howtomodal/howtomodal.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomewarnComponent } from './components/homewarn/homewarn.component';
-import { RestartwarnComponent } from './components/restartwarn/restartwarn.component'
+import { RestartwarnComponent } from './components/restartwarn/restartwarn.component';
+import { LeaderboardmodalComponent } from './components/leaderboardmodal/leaderboardmodal.component';
+import { BestscoresmodalComponent } from './components/bestscoresmodal/bestscoresmodal.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { RestartwarnComponent } from './components/restartwarn/restartwarn.compo
     HowtomodalComponent,
     HeaderComponent,
     HomewarnComponent,
-    RestartwarnComponent
+    RestartwarnComponent,
+    LeaderboardmodalComponent,
+    BestscoresmodalComponent
   ],
   imports: [
     BrowserModule,

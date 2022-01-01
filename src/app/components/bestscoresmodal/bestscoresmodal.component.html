@@ -1,0 +1,23 @@
+<div
+  [ngClass]="{ hidden: bestScoresHidden }"
+  class="relative rounded dark box-shadow-2 border-light min-h-[70vh]"
+>
+  <h3 class="font-bold text-center text-2xl text-white darker rounded-tl p-3">
+    Your Best Scores
+  </h3>
+
+  <button
+    (click)="closeBestScoresClick()"
+    class="
+      text-white text-center
+      font-bold
+      rounded
+      hover-text-darkest
+      absolute
+      bottom-1
+      right-2
+    "
+  >
+    <span class="material-icons text-5xl"> close </span>
+  </button>
+</div>

@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -17,6 +18,20 @@ export class WindowComponent implements OnInit {
 
   toggleMainWindowHidden() {
     this.mainWindowHidden = !this.mainWindowHidden;
+  }
+
+  bestScoresHidden:boolean = true;
+
+  toggleBestScores() {
+    this.bestScoresHidden = !this.bestScoresHidden;
+    this.toggleMainWindowHidden();
+  }
+
+  leaderBoardHidden:boolean = true;
+
+  toggleLeaderBoard() {
+    this.leaderBoardHidden = !this.leaderBoardHidden;
+    this.toggleMainWindowHidden();
   }
 
   settingsHidden: boolean = true;

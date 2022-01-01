@@ -1,0 +1,52 @@
+<div
+  [ngClass]="{ hidden: leaderBoardHidden }"
+  class="relative rounded dark box-shadow-2 border-light min-h-[70vh]"
+>
+  <h3 class="font-bold text-center text-2xl text-white darker rounded-tl p-3 mb-4">
+    Leader Board
+  </h3>
+
+  <table class="w-5/6 m-auto medium text-white">
+    <thead class="w-full text-white">
+      <tr class="m-auto w-full grid grid-cols-12 mb-1">
+        <th class="block col-span-6 box-shadow darker m-1 rounded-t">
+          <span class="material-icons align-bottom text-3xl">
+            account_circle
+            <span class="sr-only">Username</span>
+          </span>
+        </th>
+        <th class="block col-span-6 box-shadow darker m-1 ml-0 rounded-t">
+          <span class="material-icons align-bottom text-3xl">
+            sports_score
+            <span class="sr-only">Score</span>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="w-full text-center">
+      <tr class="m-auto w-full grid grid-cols-12 font-bold my-1">
+        <td class="block col-span-6 box-shadow mx-1 light">Great</td>
+        <td class="block col-span-6 box-shadow mr-1 light">400</td>
+      </tr>
+      <tr class="m-auto w-full grid grid-cols-12 font-bold my-1">
+        <td class="block col-span-6 box-shadow mx-1 medium">Some</td>
+        <td class="block col-span-6 box-shadow mr-1 medium">300</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button
+    (click)="closeLeaderBoardClick()"
+    class="
+      text-white text-center
+      font-bold
+      rounded
+      hover-text-darkest
+      absolute
+      bottom-1
+      right-2
+    "
+  >
+    <span class="material-icons text-5xl"> close </span>
+  </button>
+</div>
