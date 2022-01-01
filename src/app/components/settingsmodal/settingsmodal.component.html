@@ -13,7 +13,7 @@
     Settings
   </h3>
   <form (submit)="changeSettings($event)" class="grid place-items-center px-3 py-8">
-    <div class="pb-6 light text-center rounded w-full">
+    <div class="pb-6 light text-center rounded w-full box-shadow">
       <fieldset class="text-white">
         <legend
           class="font-bold block rounded-t p-2 w-full text-xl mb-4"
@@ -47,7 +47,7 @@
         </div>
       </fieldset>
     </div>
-    <div class="m-3 pb-6 light text-center rounded w-full">
+    <div class="m-3 pb-6 light text-center rounded w-full box-shadow">
       <label
         class="
           text-white
@@ -82,9 +82,6 @@
         <option class="font-bold" value="medium">Medium</option>
         <option class="font-bold" value="hard">Hard</option>
       </select>
-    </div>
-    <div class="m-3 pb-6 light text-center rounded w-full">
-
     </div>
     <button
       (click)="closeModalClick()"
