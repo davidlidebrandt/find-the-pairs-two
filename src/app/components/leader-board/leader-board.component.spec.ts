@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HowtomodalComponent } from './howtomodal.component';
+import { LeaderBoardComponent } from './leader-board.component';
 
-describe('HowtomodalComponent', () => {
-  let component: HowtomodalComponent;
-  let fixture: ComponentFixture<HowtomodalComponent>;
+describe('LeaderBoardComponent', () => {
+  let component: LeaderBoardComponent;
+  let fixture: ComponentFixture<LeaderBoardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HowtomodalComponent ]
+      declarations: [ LeaderBoardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HowtomodalComponent);
+    fixture = TestBed.createComponent(LeaderBoardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

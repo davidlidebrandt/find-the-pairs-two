@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GamenavComponent } from './gamenav.component';
+import { HomeModalsComponent } from './home-modals.component';
 
-describe('GamenavComponent', () => {
-  let component: GamenavComponent;
-  let fixture: ComponentFixture<GamenavComponent>;
+describe('HomeModalsComponent', () => {
+  let component: HomeModalsComponent;
+  let fixture: ComponentFixture<HomeModalsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GamenavComponent ]
+      declarations: [ HomeModalsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GamenavComponent);
+    fixture = TestBed.createComponent(HomeModalsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

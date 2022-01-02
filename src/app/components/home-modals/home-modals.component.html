@@ -1,0 +1,36 @@
+<div
+  [ngClass]="{ hidden: homeModalHidden }"
+  class="relative rounded dark box-shadow-2 border-light min-h-[70vh]"
+>
+  <h3 class="font-bold text-center text-2xl text-white darker rounded-tl p-3 mb-4">
+    {{title}}
+  </h3>
+
+  <ng-template [ngIf]="template === 'bestScores'">
+      <app-best-scores></app-best-scores>
+  </ng-template>
+  <ng-template [ngIf]="template === 'leaderBoard'">
+    <app-leader-board></app-leader-board>
+  </ng-template>
+  <ng-template [ngIf]="template === 'howToPlay'">
+    <app-how-to-play></app-how-to-play>
+  </ng-template>
+  <ng-template [ngIf]="template === 'settings'">
+    <app-settings></app-settings>
+  </ng-template>
+
+  <button
+    (click)="closeBestScoresClick()"
+    class="
+      text-white text-center
+      font-bold
+      rounded
+      hover-text-darkest
+      absolute
+      bottom-1
+      right-2
+    "
+  >
+    <span class="material-icons text-5xl"> close </span>
+  </button>
+</div>

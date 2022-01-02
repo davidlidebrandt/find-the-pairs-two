@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsmodalComponent } from './settingsmodal.component';
+import { BestScoresComponent } from './best-scores.component';
 
-describe('SettingsmodalComponent', () => {
-  let component: SettingsmodalComponent;
-  let fixture: ComponentFixture<SettingsmodalComponent>;
+describe('BestScoresComponent', () => {
+  let component: BestScoresComponent;
+  let fixture: ComponentFixture<BestScoresComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsmodalComponent ]
+      declarations: [ BestScoresComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SettingsmodalComponent);
+    fixture = TestBed.createComponent(BestScoresComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

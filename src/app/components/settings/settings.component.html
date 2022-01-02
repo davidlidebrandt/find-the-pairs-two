@@ -1,18 +1,5 @@
-<div
-  [ngClass]="{ hidden: settingsHidden }"
-  class="
-    relative
-    rounded
-    dark
-    box-shadow-2 
-    border-light
-    min-h-[70vh]
-  "
->
-  <h3 class="font-bold text-center text-2xl text-white darker rounded-tl p-3">
-    Settings
-  </h3>
-  <form (submit)="changeSettings($event)" class="grid place-items-center px-3 py-8">
+
+  <form class="grid place-items-center px-3 py-8">
     <div class="pb-6 light text-center rounded w-full box-shadow">
       <fieldset class="text-white">
         <legend
@@ -20,7 +7,7 @@
         >
           Sound <span class="material-icons align-middle">volume_down</span>
         </legend>
-        <div (click)="clickSoundOff()" class="dark w-1/3 inline-block m-auto rounded p-2 cursor-pointer">
+        <div class="dark w-1/3 inline-block m-auto rounded p-2 cursor-pointer">
           <label class="font-bold" for="sound-off">
             <span class="cursor-pointer">Off</span>
           </label>
@@ -33,7 +20,7 @@
             value="off"
           />
         </div>
-        <div (click)="clickSoundOn()" class="dark w-1/3 m-auto mx-3 inline-block rounded p-2 cursor-pointer">
+        <div class="dark w-1/3 m-auto mx-3 inline-block rounded p-2 cursor-pointer">
           <label class="font-bold" for="sound-on ml-3 font-bold">
             <span class="cursor-pointer">On</span>
           </label>
@@ -83,13 +70,4 @@
         <option class="font-bold" value="hard">Hard</option>
       </select>
     </div>
-    <button
-      (click)="closeModalClick()"
-      class="text-white text-center font-bold rounded hover-text-darkest absolute bottom-1 right-2"
-    >
-    <span class="material-icons text-5xl">
-      close
-    </span>
-    </button>
   </form>
-</div>

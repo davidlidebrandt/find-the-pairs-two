@@ -1,7 +1,4 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-
-
 @Component({
   selector: 'app-window',
   templateUrl: './window.component.html',
@@ -20,62 +17,22 @@ export class WindowComponent implements OnInit {
     this.mainWindowHidden = !this.mainWindowHidden;
   }
 
-  bestScoresHidden:boolean = true;
+  homeModalHidden:boolean = true;
+  template:string = "";
+  title:string = "";
 
-  toggleBestScores() {
-    this.bestScoresHidden = !this.bestScoresHidden;
+
+  toggleHomeModal(title:string, template:string) {
+    this.title = title;
+    this.template = template;
+    this.homeModalHidden = !this.homeModalHidden;
     this.toggleMainWindowHidden();
   }
 
-  leaderBoardHidden:boolean = true;
-
-  toggleLeaderBoard() {
-    this.leaderBoardHidden = !this.leaderBoardHidden;
-    this.toggleMainWindowHidden();
-  }
-
-  settingsHidden: boolean = true;
-
-  toggleSettings() {
-    this.settingsHidden = !this.settingsHidden;
-    this.toggleMainWindowHidden();
-  }
-
-  howToHidden: boolean = true;
-
-  toggleHowTo() {
-    this.howToHidden = !this.howToHidden;
-    this.toggleMainWindowHidden();
-  }
-
-  hoveredStartGame: boolean = false;
-
-  animateStartGame() {
-    this.hoveredStartGame = !this.hoveredStartGame;
-  }
-
-  hoveredSettings: boolean = false;
-
-  animateSettings() {
-    this.hoveredSettings = !this.hoveredSettings;
-  }
-
-  hoveredHelp: boolean = false;
-
-  animateHelp() {
-    this.hoveredHelp = !this.hoveredHelp;
-  }
-
-  hoveredLeaderBoard: boolean = false;
-
-  animateLeaderBoard() {
-    this.hoveredLeaderBoard = !this.hoveredLeaderBoard;
-  }
-
-  hoveredScores: boolean = false;
-
-  animateScores() {
-    this.hoveredScores = !this.hoveredScores;
+  animateIcon(event:Event) {
+    const currentButton = event.target as Element;
+    const child = currentButton.querySelector("span");
+    child?.classList.toggle("animate-spin");
   }
 
   hoveredLogo: boolean = false;
