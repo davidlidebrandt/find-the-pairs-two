@@ -23,6 +23,9 @@ export class WindowComponent implements OnInit {
 
 
   toggleHomeModal(title:string, template:string) {
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0;
+
     this.title = title;
     this.template = template;
     this.homeModalHidden = !this.homeModalHidden;
@@ -37,7 +40,7 @@ export class WindowComponent implements OnInit {
 
   hoveredLogo: boolean = false;
 
-  animateLogo() {
+  animateLogo():void {
     this.hoveredLogo = !this.hoveredLogo;
   }
 
