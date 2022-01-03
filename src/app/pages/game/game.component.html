@@ -1,6 +1,4 @@
-
-<div id="" class="darker min-h-screen grid grid-cols-12 pb-8">
-    <app-header class="col-span-12 mb-28 sm:mb-6"></app-header>
-    <app-gamewindow [homeWarnClosed]="homeWarnClosed" (openReturnHomeModal)="toggleReturnHome()" class="col-span-10 col-start-2 md:col-span-10 md:col-start-2 xl:col-span-8 xl:col-start-3"></app-gamewindow>
+<div id="" class="darker min-h-screen grid grid-cols-12 place-items-center py-8">
+    <app-gamewindow [homeWarnClosed]="homeWarnClosed" (openReturnHomeModal)="toggleReturnHome()" class="mx-2 col-span-12 md:col-span-10 md:col-start-2 xl:col-span-8 xl:col-start-3"></app-gamewindow>
     <app-homewarn [homeWarnClosed]="homeWarnClosed" (closeReturnHomeModal)="toggleReturnHome()"></app-homewarn>
 </div>
