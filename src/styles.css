@@ -21,7 +21,7 @@ body {
     background-size: cover;
 }
 
-#cardw-bg {
+#cardw-bg, .logo-bg {
     background: url("./assets/images/6230956.jpg") center no-repeat;
     background-size: cover;
 }
