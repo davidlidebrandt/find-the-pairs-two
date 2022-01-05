@@ -1,5 +1,5 @@
 
-  <form class="grid place-items-center px-3 py-8">
+  <form class="grid place-items-center px-3 py-4">
     <div class="pb-6 light text-center rounded w-full box-shadow">
       <fieldset class="text-white">
         <legend
@@ -65,9 +65,9 @@
         name="level"
         id="level"
       >
-        <option class="font-bold" value="easy">Easy</option>
-        <option class="font-bold" value="medium">Medium</option>
-        <option class="font-bold" value="hard">Hard</option>
+        <option [attr.selected]="level === 'easy' ? 'selected' : null" id="easy" class="font-bold" value="easy">Easy</option>
+        <option [attr.selected]="level === 'medium' ? 'selected' : null" id="easy" id="medium" class="font-bold" value="medium">Medium</option>
+        <option [attr.selected]="level === 'hard' ? 'selected' : null" id="easy" id="hard" class="font-bold" value="hard">Hard</option>
       </select>
     </div>
   </form>
