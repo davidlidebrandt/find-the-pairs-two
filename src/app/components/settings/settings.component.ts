@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingsDataService } from 'src/app/services/settings-data.service';
+import { SettingsDataService, Settings } from 'src/app/services/settings-data.service';
+
 
 @Component({
   selector: 'app-settings',
@@ -9,14 +10,17 @@ import { SettingsDataService } from 'src/app/services/settings-data.service';
 export class SettingsComponent implements OnInit {
   soundOn!: boolean;
   level!: string;
+  currentSettings!:Settings;
 
   constructor(private settings: SettingsDataService) {
-    let currentSettings = settings.getSettings(); 
-    this.soundOn = currentSettings["sound"] === "on" ? true : false;
-    this.level = currentSettings["level"];
   }
 
   ngOnInit(): void {
+    this.settings.getSettings().subscribe(settings => {
+      this.currentSettings = settings;
+    }); 
+    this.soundOn = this.currentSettings["sound"] === "on" ? true : false;
+    this.level = this.currentSettings["level"];
   }
 
   getSettingsFromForm(event:Event) {
@@ -31,6 +35,14 @@ export class SettingsComponent implements OnInit {
 
   setSettings(sound:string, level:string) {
     this.settings.setSettings(sound, level);
+  }
+
+  toggleSound(value:string) {
+    if(value === "on") {
+      this.soundOn = true;
+    } else if (value == "off") {
+      this.soundOn = false;
+    }
   }
 
 }

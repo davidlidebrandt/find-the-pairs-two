@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
-interface Settings {
+export interface Settings {
   sound:string,
   level:string,
 }
@@ -12,25 +13,27 @@ export class SettingsDataService {
 
   constructor() { }
 
-  getSettings():Settings {
+  getSettings():Observable<Settings>  {
     
-    let soundSettingsInLocalStorage = localStorage.getItem("sound");
-    let levelSettingsInLocalStorage = localStorage.getItem("level");
-    let soundSetting = soundSettingsInLocalStorage != null ? soundSettingsInLocalStorage : "off";
-    let levelSetting = levelSettingsInLocalStorage != null ? levelSettingsInLocalStorage : "easy";
-
-    return {
+    const soundSettingsInLocalStorage = localStorage.getItem("sound");
+    const levelSettingsInLocalStorage = localStorage.getItem("level");
+    console.log(soundSettingsInLocalStorage)
+    const soundSetting = soundSettingsInLocalStorage != null ? soundSettingsInLocalStorage : "off";
+    const levelSetting = levelSettingsInLocalStorage != null ? levelSettingsInLocalStorage : "easy";
+    const settingsToSend = of({
       sound: soundSetting,
       level: levelSetting,
-    }
+    })
+    return settingsToSend
   }
 
   setSettings(sound:string, level:string):string {
-    console.log("here")
-    if ((sound !== "off" || "on") || (level !== "easy" || "medium" || "hard")) {
+    
+    if ((sound !== "off" && sound !== "on") || (level !== "easy" && level !== "medium" && level !== "hard")) {
+      console.log("here")
       return "Error applying settings, faulty values"
     }
-    localStorage.setItem("sound", sound);
+    localStorage.setItem("sound", sound); 
     localStorage.setItem("level", level);
     return "Your settings was applied"
   }
