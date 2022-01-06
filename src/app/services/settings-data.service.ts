@@ -26,6 +26,7 @@ export class SettingsDataService {
   }
 
   setSettings(sound:string, level:string):string {
+    console.log("here")
     if ((sound !== "off" || "on") || (level !== "easy" || "medium" || "hard")) {
       return "Error applying settings, faulty values"
     }
@@ -33,6 +34,5 @@ export class SettingsDataService {
     localStorage.setItem("level", level);
     return "Your settings was applied"
   }
-
 
 }

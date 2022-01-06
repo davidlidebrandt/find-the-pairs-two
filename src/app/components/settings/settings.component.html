@@ -1,5 +1,5 @@
 
-  <form class="grid place-items-center px-3 py-4">
+  <form id="settings-form" (submit)="getSettingsFromForm($event)" action="POST" class="grid place-items-center px-3 py-2">
     <div class="pb-6 light text-center rounded w-full box-shadow">
       <fieldset class="text-white">
         <legend
@@ -70,4 +70,10 @@
         <option [attr.selected]="level === 'hard' ? 'selected' : null" id="easy" id="hard" class="font-bold" value="hard">Hard</option>
       </select>
     </div>
+    <button class="dark border-2 text-white hover-light py-3 w-1/2 mt-2 rounded font-bold mb-3">
+      Save
+      <span class="material-icons align-bottom ml-1">
+        save
+      </span>
+    </button>
   </form>
