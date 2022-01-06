@@ -26,15 +26,17 @@ export class SettingsComponent implements OnInit {
   getSettingsFromForm(event:Event) {
     event.preventDefault();
     const settingsForm = document.querySelector("#settings-form") as HTMLFormElement;
-    let formData = new FormData(settingsForm);
-    let soundOnOrOff = formData.get("sound") as string;
-    let level = formData.get("level") as string;
+    const formData = new FormData(settingsForm);
+    const soundOnOrOff = formData.get("sound") as string;
+    const level = formData.get("level") as string;
     this.setSettings(soundOnOrOff, level);
    
   }
 
   setSettings(sound:string, level:string) {
     this.settings.setSettings(sound, level);
+    const closeHomeModalButton = document.querySelector("#closeHomeModal") as HTMLElement;
+    closeHomeModalButton?.click();
   }
 
   toggleSound(value:boolean) {

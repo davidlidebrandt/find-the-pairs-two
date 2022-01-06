@@ -1,6 +1,6 @@
 <div
   [ngClass]="{ hidden: homeModalHidden }"
-  class="relative rounded dark box-shadow-2 border-light min-h-[70vh]"
+  class="grid rounded dark box-shadow-2 border-light"
 >
   <h3 class="font-bold text-center text-2xl text-white darker rounded-tl p-3 mb-4">
     {{title}}
@@ -20,17 +20,20 @@
   </ng-template>
 
   <button
-    (click)="closeBestScoresClick()"
     class="
-      text-white text-center
+      text-white text-right
       font-bold
       rounded
-      hover-text-darkest
-      absolute
-      bottom-1
-      right-2
+      mt-2
+      mr-2
+      cursor-default
     "
   >
-    <span class="material-icons text-5xl"> close </span>
+    <span
+      id="closeHomeModal"
+      (click)="closeBestScoresClick()"
+      class="material-icons text-5xl cursor-pointer hover-text-darkest"> 
+      close 
+    </span>
   </button>
 </div>
