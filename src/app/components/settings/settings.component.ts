@@ -37,12 +37,8 @@ export class SettingsComponent implements OnInit {
     this.settings.setSettings(sound, level);
   }
 
-  toggleSound(value:string) {
-    if(value === "on") {
-      this.soundOn = true;
-    } else if (value == "off") {
-      this.soundOn = false;
-    }
+  toggleSound(value:boolean) {
+    this.soundOn = value;
   }
 
 }
