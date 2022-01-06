@@ -23,7 +23,8 @@ import { HomeModalsComponent } from './components/home-modals/home-modals.compon
 import { LeaderBoardComponent } from './components/leader-board/leader-board.component';
 import { HowToPlayComponent } from './components/how-to-play/how-to-play.component';
 import { BestScoresComponent } from './components/best-scores/best-scores.component';
-import { SettingsComponent } from './components/settings/settings.component'
+import { SettingsComponent } from './components/settings/settings.component';
+import { LoginSignupComponent } from './components/login-signup/login-signup.component'
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SettingsComponent } from './components/settings/settings.component'
     LeaderBoardComponent,
     HowToPlayComponent,
     BestScoresComponent,
-    SettingsComponent
+    SettingsComponent,
+    LoginSignupComponent
   ],
   imports: [
     BrowserModule,
