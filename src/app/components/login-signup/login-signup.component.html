@@ -1,25 +1,30 @@
-<div class="gradient rounded border-8 border-light">
+<div class="gradient rounded box-shadow-2 border-8 border-light">
     <div class="grid mx-2">
       <div class="text-center">
-        <button disabled="true" class="text-lg text-center text-white font-bold mb-4 px-2 mx-1 inline-block light rounded-b text-light medium">Log In</button>
-        <button class="text-lg text-center text-white font-bold mb-4 px-2 mx-1 inline-block rounded-b light">Sign Up</button>
+        <button disabled="true" class="text-base text-center text-white font-bold mb-4 px-2 mx-1 inline-block light rounded-b light uppercase">Log In</button>
+        <button class="text-base text-center text-white font-bold mb-6 px-2 mx-1 inline-block rounded-b light  text-dark uppercase">Sign Up</button>
       </div>
-      <h2 class="border-2 border-light rounded p-1 box-shadow-2 logo-bg text-white font-bold w-max">
-        <span></span><span class="text-3xl font-black text-light">F</span>ind the
-        <span class="text-3xl font-black text-light">P</span>airs
-        <span class="text-3xl text-light font-black"> ||</span
-        >
-      </h2>
+      <div class="grid justify-items-center mb-6">
+        <h2 class="border-2 border-light rounded p-1 text-2xl box-shadow-2 logo-bg text-white font-bold w-max">
+            <span></span><span class="text-5xl font-black text-light">F</span>ind the
+            <span class="text-4xl font-black text-light">P</span>airs
+            <span class="text-4xl text-light font-black"> ||</span
+            >
+        </h2>
+        <span class="italic text-white font-bold mt-1">A Memory Game</span>
+      </div>
       <form class="text-left text-white font-bold" action="POST"></form>
-        <p class="text-white font-bold">Log in to start playing</p>
-        <p class="text-white font-bold mb-2">No account? <a href="">Sign Up</a></p>
+        <div class="mb-6">
+            <p class="text-center text-2xl  text-white font-black">Log in to start playing</p>
+            <p class="my-3 text-center text-white font-bold">No account? <a class="medium p-1 rounded hover-light hover-text-darkest transition-all duration-700" href="">Sign Up</a></p>
+        </div>
         <label class="font-bold text-white" for="username">Username</label>
-        <input class="rounded font-bold p-3 mb-3 focus:outline-none focus:bg-blue-600 focus:text-white" id="username" type="text" [formControl]="userName">
+        <input class="rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="username" type="text" [formControl]="userName">
         <label class="font-bold text-white" for="password">Password</label>
-        <input class="rounded font-bold p-3 mb-3 focus:outline-none focus:bg-blue-600 focus:text-white" id="password" type="text" [formControl]="password">
-        <button class="my-5 font-bold dark box-shadow text-white py-4 rounded">
+        <input class="rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="password" type="password" [formControl]="password">
+        <button class="my-5 font-bold darkest box-shadow text-white py-4 rounded hover-light hover-text-darkest transition-all duration-700">
             Log In
-            <span class="material-icons align-bottom">
+            <span class="material-icons align-bottom float-right mr-4">
                 login
             </span>
         </button>
