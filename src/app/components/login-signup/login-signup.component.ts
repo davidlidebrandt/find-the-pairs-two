@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class LoginSignupComponent implements OnInit {
   logInShown:boolean = true;
+  userNameToolTipHidden:boolean = true;
   
   logInUserName = new FormControl('');
   logInPassword = new FormControl('');
@@ -22,6 +23,14 @@ export class LoginSignupComponent implements OnInit {
 
   toggleLogInShown():void {
     this.logInShown = !this.logInShown;
+  }
+
+  displayToolTip():void {
+    this.userNameToolTipHidden = false;
+  }
+
+  hideToolTip():void {
+    this.userNameToolTipHidden = true;
   }
 
 }

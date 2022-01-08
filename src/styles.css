@@ -33,6 +33,11 @@ body {
   
   ::-webkit-scrollbar-track {
     background:#fff;
+   
+  }
+
+  ::-webkit-scrollbar-track:hover {
+   
   }
 
 
@@ -52,6 +57,7 @@ body {
   
   ::-webkit-scrollbar-thumb {
     background-color: #242e5c;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
