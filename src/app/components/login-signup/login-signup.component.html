@@ -39,16 +39,25 @@
             </div>
             <label class="block font-bold text-white relative" for="username">
               Username
-              <span [ngClass]="{'opacity-0': userNameToolTipHidden}" class="mx-1 w-5/6 text-center block absolute right-0 bottom-full text-sm dark p-1 rounded-xl box-shadow transition-all duration-700">
+              <span [ngClass]="{'opacity-0 hidden': userNameToolTipHidden}" class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700">
                 6-12 characters, at least one number one lowercase and one uppercase letter
-                <span class="block absolute h-4 w-4 "></span>
               </span>
             </label>
-            <input (focus)="displayToolTip()" (focusout)="hideToolTip()" class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signUpUserName" type="text" [formControl]="signUpUserName">
-            <label class="block font-bold text-white" for="password">Password</label>
-            <input class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signUpPassword" type="password" [formControl]="signUpPassword">
-            <label class="block font-bold text-white" for="password">Repeat Password</label>
-            <input class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signupRepeatPassword" type="password" [formControl]="signUpRepeatPassword">
+            <input (focus)="toggleUsernameToolTip()" (focusout)="toggleUsernameToolTip()" class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signUpUserName" type="text" [formControl]="signUpUserName">
+            <label class="block font-bold text-white relative" for="password">
+              Password
+              <span [ngClass]="{'opacity-0 hidden': passwordToolTipHidden}" class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700">
+                6-12 characters, at least one number one lowercase and one uppercase letter
+              </span>
+            </label>
+            <input (focus)="togglePasswordToolTip()" (focusout)="togglePasswordToolTip()" class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signUpPassword" type="password" [formControl]="signUpPassword">
+            <label class="block font-bold text-white relative" for="password">
+              Repeat Password
+              <span [ngClass]="{'opacity-0 hidden': repeatPasswordToolTipHidden}" class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700">
+                Please enter your chosen password again
+              </span>
+            </label>
+            <input (focus)="toggleRepeatPasswordToolTip()" (focusout)="toggleRepeatPasswordToolTip()" class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signupRepeatPassword" type="password" [formControl]="signUpRepeatPassword">
             <button class="w-full my-5 font-bold darkest box-shadow text-white py-4 rounded hover-light hover-text-darkest transition-all duration-700">
                 Sign Up
                 <span class="material-icons align-bottom float-right mr-4">

@@ -9,6 +9,8 @@ import { FormControl } from '@angular/forms';
 export class LoginSignupComponent implements OnInit {
   logInShown:boolean = true;
   userNameToolTipHidden:boolean = true;
+  passwordToolTipHidden:boolean = true;
+  repeatPasswordToolTipHidden = true;
   
   logInUserName = new FormControl('');
   logInPassword = new FormControl('');
@@ -25,12 +27,17 @@ export class LoginSignupComponent implements OnInit {
     this.logInShown = !this.logInShown;
   }
 
-  displayToolTip():void {
-    this.userNameToolTipHidden = false;
+  toggleUsernameToolTip():void {
+    this.userNameToolTipHidden = !this.userNameToolTipHidden;
   }
 
-  hideToolTip():void {
-    this.userNameToolTipHidden = true;
+  togglePasswordToolTip():void {
+    this.passwordToolTipHidden = !this.passwordToolTipHidden;
   }
+
+  toggleRepeatPasswordToolTip():void {
+    this.repeatPasswordToolTipHidden = !this.repeatPasswordToolTipHidden;
+  }
+
 
 }
