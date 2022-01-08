@@ -1,4 +1,35 @@
-<div id="" class="darker min-h-screen grid grid-cols-12 place-items-center py-8">
-    <app-gamewindow [homeWarnClosed]="homeWarnClosed" (openReturnHomeModal)="toggleReturnHome()" class="mx-2 col-span-12 md:col-span-10 md:col-start-2 xl:col-span-8 xl:col-start-3"></app-gamewindow>
-    <app-homewarn [homeWarnClosed]="homeWarnClosed" (closeReturnHomeModal)="toggleReturnHome()"></app-homewarn>
+<div
+  id=""
+  class="darker min-h-screen grid grid-cols-12 place-items-center py-8"
+>
+  <app-gamewindow
+    [homeWarnClosed]="homeWarnClosed"
+    (openReturnHomeModal)="
+      toggleGameWarningModal(
+        'If you return home all data from this round will be lost',
+        'home',
+        true
+      )
+    "
+    (openRestartModal)="
+      toggleGameWarningModal(
+        'If your restart the game all data from this round will be lost',
+        'restart_alt',
+        false
+      )
+    "
+    class="
+      mx-2
+      col-span-12
+      md:col-span-10 md:col-start-2
+      xl:col-span-8 xl:col-start-3
+    "
+  ></app-gamewindow>
+  <app-game-warning-modal
+    [gameWarningClosed]="gameWarningClosed"
+    [warningText]="warningText"
+    [proceedIcon]="proceedIcon"
+    [routerPathHome]="routerPathHome"
+    (closeGameWarningModal)="toggleGameWarningModal()"
+  ></app-game-warning-modal>
 </div>

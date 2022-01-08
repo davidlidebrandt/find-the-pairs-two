@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomewarnComponent } from './homewarn.component';
+import { GameWarningModalComponent } from './game-warning-modal.component';
 
-describe('HomewarnComponent', () => {
-  let component: HomewarnComponent;
-  let fixture: ComponentFixture<HomewarnComponent>;
+describe('GameWarningModalComponent', () => {
+  let component: GameWarningModalComponent;
+  let fixture: ComponentFixture<GameWarningModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomewarnComponent ]
+      declarations: [ GameWarningModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomewarnComponent);
+    fixture = TestBed.createComponent(GameWarningModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

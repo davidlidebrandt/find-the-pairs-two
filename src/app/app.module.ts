@@ -17,7 +17,6 @@ import { ScoreComponent } from './components/score/score.component';
 import { CardwindowComponent } from './components/cardwindow/cardwindow.component';
 import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomewarnComponent } from './components/homewarn/homewarn.component';
 import { RestartwarnComponent } from './components/restartwarn/restartwarn.component';
 
 import { HomeModalsComponent } from './components/home-modals/home-modals.component';
@@ -25,7 +24,8 @@ import { LeaderBoardComponent } from './components/leader-board/leader-board.com
 import { HowToPlayComponent } from './components/how-to-play/how-to-play.component';
 import { BestScoresComponent } from './components/best-scores/best-scores.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { LoginSignupComponent } from './components/login-signup/login-signup.component'
+import { LoginSignupComponent } from './components/login-signup/login-signup.component';
+import { GameWarningModalComponent } from './components/game-warning-modal/game-warning-modal.component'
 
 @NgModule({
   declarations: [
@@ -40,14 +40,14 @@ import { LoginSignupComponent } from './components/login-signup/login-signup.com
     CardwindowComponent,
     CardComponent,
     HeaderComponent,
-    HomewarnComponent,
     RestartwarnComponent,
     HomeModalsComponent,
     LeaderBoardComponent,
     HowToPlayComponent,
     BestScoresComponent,
     SettingsComponent,
-    LoginSignupComponent
+    LoginSignupComponent,
+    GameWarningModalComponent
   ],
   imports: [
     BrowserModule,

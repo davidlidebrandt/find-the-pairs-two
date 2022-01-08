@@ -16,8 +16,14 @@ export class GamewindowComponent implements OnInit {
 
   @Output() openReturnHomeModal = new EventEmitter();
 
-  openReturnHome() {
+  openReturnHome():void {
     this.openReturnHomeModal.emit();
+  }
+
+  @Output() openRestartModal = new EventEmitter();
+
+  openRestart():void {
+    this.openRestartModal.emit();
   }
 
 }
