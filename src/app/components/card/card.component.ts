@@ -12,6 +12,9 @@ export class CardComponent implements OnInit {
 
   timeLeft!:number;
   score!:number;
+  currentCard:string ="";
+  lastCard:string = "";
+  disabled:boolean = false;
 
   frontHidden:boolean = false;
   backHidden:boolean = true;
@@ -26,7 +29,15 @@ export class CardComponent implements OnInit {
     })
   }
 
-  turnCardFront(e:any): void {
+  turnCardFront(): void {
+    if (this.lastCard === this.icon) {
+      this.disabled = true;
+      this.lastCard = "";
+    } else if (this.lastCard !== "") {
+      this.lastCard = ""
+    } else {
+      this.lastCard = this.icon;
+    }
     this.perspectiveShown = true;
     setTimeout(() => {
       this.frontHidden = true;
@@ -37,7 +48,7 @@ export class CardComponent implements OnInit {
 
   }
 
-  turnCardBack(e:any) {
+  turnCardBack() {
     this.perspectiveShown = false;
     setTimeout(() => {
       this.backHidden = true;
