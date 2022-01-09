@@ -17,7 +17,7 @@
         <form class="w-full text-left text-white font-bold" action="POST">
             <div class="mb-6">
                 <p class="text-center text-2xl  text-white font-black">Log in to start playing</p>
-                <p class="my-3 text-center text-white font-bold">No account? <button (click)="toggleLogInShown()" class="font-bold medium p-1 rounded hover-light hover-text-darkest transition-all duration-700">Sign Up</button></p>
+                <p class="my-3 text-center text-white font-bold">No account? <button (click)="toggleLogInShown()" class="font-bold dark p-1 rounded hover-light hover-text-darkest transition-all duration-700">Sign Up</button></p>
             </div>
             <label class="block font-bold text-white" for="username">Username</label>
             <input class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="logInUserName" type="text" [formControl]="logInUserName">
@@ -35,7 +35,7 @@
         <form class="w-full text-left text-white font-bold" action="POST">
             <div class="mb-6">
                 <p class="text-center text-2xl  text-white font-black">Sign up to start playing</p>
-                <p class="my-3 text-center text-white font-bold">Already signed up? <button (click)="toggleLogInShown()"  class="medium p-1 font-bold rounded hover-light hover-text-darkest transition-all duration-700">Log In</button></p>
+                <p class="my-3 text-center text-white font-bold">Already signed up? <button (click)="toggleLogInShown()"  class="dark p-1 font-bold rounded hover-light hover-text-darkest transition-all duration-700">Log In</button></p>
             </div>
             <label class="block font-bold text-white relative" for="username">
               Username
