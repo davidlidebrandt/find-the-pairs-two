@@ -27,7 +27,6 @@ export class WindowComponent implements OnInit {
     this.animateButton = buttonName;
   }
 
-
   toggleHomeModal(title:string, template:string) {
     document.body.scrollTop = 0; 
     document.documentElement.scrollTop = 0;

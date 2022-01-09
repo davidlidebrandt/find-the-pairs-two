@@ -87,7 +87,11 @@ body {
 }
 
 .gradient {
-    background: linear-gradient(to right, #4b5ed0, #242e5c);
+    background: linear-gradient(to right, #4b5ed0, #242e5c, #242e5c, #4b5ed0);
+}
+
+.gradient-2 {
+    background: linear-gradient(to right, #242e5c, #4b5ed0, #4b5ed0, #242e5c);
 }
 
 .text-lightest {
