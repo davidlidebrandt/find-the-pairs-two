@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GameServiceService, Game } from 'src/app/services/game-service.service';
 
 @Component({
   selector: 'app-card',
@@ -9,13 +10,20 @@ export class CardComponent implements OnInit {
 
   @Input() icon!: string;
 
+  timeLeft!:number;
+  score!:number;
+
   frontHidden:boolean = false;
   backHidden:boolean = true;
   perspectiveShown:boolean = false;
 
-  constructor() { }
+  constructor(private game:GameServiceService) { }
 
   ngOnInit(): void {
+    this.game.getNewGame().subscribe((newGameData) => {
+      this.timeLeft = newGameData.time;
+      this.score = newGameData.score;
+    })
   }
 
   turnCardFront(e:any): void {
