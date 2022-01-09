@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-window',
@@ -18,8 +19,13 @@ export class WindowComponent implements OnInit {
   }
 
   homeModalHidden:boolean = true;
+  animateButton:string = "";
   template:string = "";
   title:string = "";
+
+  toggleAnimateButton(buttonName:string="") {
+    this.animateButton = buttonName;
+  }
 
 
   toggleHomeModal(title:string, template:string) {
@@ -30,12 +36,6 @@ export class WindowComponent implements OnInit {
     this.template = template;
     this.homeModalHidden = !this.homeModalHidden;
     this.toggleMainWindowHidden();
-  }
-
-  animateIcon(event:Event) {
-    const currentButton = event.target as Element;
-    const child = currentButton.querySelector("span");
-    child?.classList.toggle("animate-spin");
   }
 
   hoveredLogo: boolean = false;

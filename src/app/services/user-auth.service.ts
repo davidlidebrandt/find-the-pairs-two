@@ -13,7 +13,7 @@ export class UserAuthService {
   constructor() { }
 
   getIfUserIsLoggedIn():Observable<User> {
-    const userIsLoggedIn = false;
+    const userIsLoggedIn = true;
     const userObserver = of({
       isLoggedIn: userIsLoggedIn
     })
