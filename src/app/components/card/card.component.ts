@@ -9,37 +9,34 @@ export class CardComponent implements OnInit {
 
   @Input() icon!: string;
 
+  frontHidden:boolean = false;
+  backHidden:boolean = true;
+  perspectiveShown:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   turnCardFront(e:any): void {
-    let parent = e.target.closest(".perspective-inner")
-    parent.classList.toggle("perspective-inner-turn")
-    let front = e.target.closest(".front")
-    let back = parent.children[1]
+    this.perspectiveShown = true;
     setTimeout(() => {
-      front.classList.toggle("hidden")
+      this.frontHidden = true;
     }, 200);
     setTimeout(() => {
-      back.classList.toggle("hidden")
+      this.backHidden = false;
     }, 500);
 
   }
 
   turnCardBack(e:any) {
-    let parent = e.target.closest(".perspective-inner")
-    parent.classList.toggle("perspective-inner-turn")
-    let front = parent.children[1]
-    console.log(parent.children)
-    let back = parent.children[0]
+    this.perspectiveShown = false;
     setTimeout(() => {
-      back.classList.toggle("hidden")
-    }, 400);
-    setTimeout(() => {
-      front.classList.toggle("hidden")
+      this.backHidden = true;
     }, 300);
+    setTimeout(() => {
+      this.frontHidden = false;
+    }, 500);
   }
 
 }

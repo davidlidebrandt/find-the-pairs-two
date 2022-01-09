@@ -1,11 +1,11 @@
-<div class="inline-block gradient text-white h-24 w-14 md:h-28 md:w-20 m-2 perspective-inner mb-0 box-shadow rounded cursor-pointer">
-    <div (click)="turnCardFront($event)" class="front relative w-full h-full">
+<div [class.perspective-inner-turn]="perspectiveShown" class="inline-block gradient-2 text-white h-24 w-14 md:h-28 md:w-20 m-2 perspective-inner mb-0 box-shadow rounded cursor-pointer">
+    <div (click)="turnCardFront($event)" [class.hidden]="frontHidden" class="front relative w-full h-full">
         <div class="center-abs-xy">
             <p class="font-bold text-xs">Find The Pairs ||</p>
         </div>
         
     </div>
-    <div (click)="turnCardBack($event)" class="back hidden relative w-full h-full light rounded">
+    <div (click)="turnCardBack($event)" [class.hidden]="backHidden" class="back relative w-full h-full light rounded">
         <div class="center-abs-xy">
             <span class="material-icons">
                 {{icon}}
