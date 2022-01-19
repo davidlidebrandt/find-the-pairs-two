@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-signup',
@@ -7,18 +7,23 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./login-signup.component.css']
 })
 export class LoginSignupComponent implements OnInit {
+  constructor() { }
+  
   logInShown:boolean = true;
   userNameToolTipHidden:boolean = true;
   passwordToolTipHidden:boolean = true;
   repeatPasswordToolTipHidden = true;
-  
-  logInUserName = new FormControl('');
-  logInPassword = new FormControl('');
-  signUpUserName = new FormControl('');
-  signUpPassword = new FormControl('');
-  signUpRepeatPassword = new FormControl('');
 
-  constructor() { }
+  logInForm = new FormGroup({
+    logInUserName: new FormControl('', Validators.required),
+    logInPassword: new FormControl('', Validators.required),
+  })
+
+  signUpForm = new FormGroup({
+    signUpUserName: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
+    signUpPassword: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
+    signUpRepeatPassword: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
+  })
 
   ngOnInit(): void {
   }
