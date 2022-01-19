@@ -50,7 +50,7 @@
                 6-12 characters, at least one number one lowercase and one uppercase letter
               </span>
             </label>
-            <input (focus)="togglePasswordToolTip()" (focusout)="togglePasswordToolTip()" class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signUpPassword" type="password" formControlName="signUpPassword">
+            <input (focus)="togglePasswordToolTip()" (focusout)="togglePasswordToolTip()" class="border-2 w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" [ngClass]="{'border-red-700': !signUpForm.controls.signUpPassword.valid && signUpForm.controls.signUpPassword.touched, 'border-transparent': signUpForm.controls.signUpPassword.valid && signUpForm.controls.signUpPassword.untouched}"  id="signUpPassword" type="password" formControlName="signUpPassword">
             <label class="block font-bold text-white relative" for="password">
               Repeat Password
               <span [ngClass]="{'opacity-0 hidden': repeatPasswordToolTipHidden}" class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700">
