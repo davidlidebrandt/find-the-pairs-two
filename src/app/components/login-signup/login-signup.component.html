@@ -65,8 +65,11 @@
           formControlName="logInPassword"
         />
         <button
+          [ngClass] = "{
+            'hover-light hover-text-darkest': logInForm.valid
+          }"
           [disabled]="!logInForm.valid"
-          class="disabled:opacity-80 disabled:cursor-default w-full my-5 font-bold darkest box-shadow text-white py-4 rounded hover-light hover-text-darkest transition-all duration-700"
+          class="disabled:opacity-80 disabled:cursor-default w-full my-5 font-bold darkest box-shadow text-white py-4 rounded transition-all duration-700"
         >
           Log In
           <span class="material-icons align-bottom float-right mr-4">
@@ -150,8 +153,8 @@
         </label>
         <input
           [ngClass] = "{
-            'bg-red-400': !passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.touched,
-            'light': passwordRepeatSignUpInputField.valid || passwordRepeatSignUpInputField.untouched
+            'bg-red-400': (!passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.touched) || (passwordRepeatSignUpInputField.value !== passwordSignUpInputField.value),
+            'light': (passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.value === passwordSignUpInputField.value) || passwordRepeatSignUpInputField.untouched
           }"
           (focus)="toggleRepeatPasswordToolTip()"
           (focusout)="toggleRepeatPasswordToolTip()"
