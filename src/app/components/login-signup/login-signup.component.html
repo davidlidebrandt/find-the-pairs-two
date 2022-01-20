@@ -1,71 +1,178 @@
 <div class="gradient rounded box-shadow-2 border-8 border-light">
-    <div class="grid mx-2">
-      <div class="text-center">
-        <button [disabled]="logInShown" (click)="toggleLogInShown()" class="disabled:opacity-100 opacity-50 disabled:cursor-default text-base text-center text-white font-bold mb-4 px-2 mx-1 inline-block light rounded-b light uppercase">Log In</button>
-        <button [disabled]="!logInShown" (click)="toggleLogInShown()" class="disabled:opacity-100 opacity-50 disabled:cursor-default text-base text-center text-white font-bold mb-6 px-2 mx-1 inline-block rounded-b light  uppercase">Sign Up</button>
-      </div>
-      <div class="grid justify-items-center mb-6">
-        <h2 class="border-2 border-light rounded p-1 text-2xl box-shadow-2 logo-bg text-white font-bold w-max">
-            <span></span><span class="text-5xl font-black text-light">F</span>ind the
-            <span class="text-4xl font-black text-light">P</span>airs
-            <span class="text-4xl text-light font-black"> ||</span
+  <div class="grid mx-2">
+    <div class="text-center">
+      <button
+        [disabled]="logInShown"
+        (click)="toggleLogInShown()"
+        class="disabled:opacity-100 opacity-50 disabled:cursor-default text-base text-center text-white font-bold mb-4 px-2 mx-1 inline-block light rounded-b light uppercase"
+      >
+        Log In
+      </button>
+      <button
+        [disabled]="!logInShown"
+        (click)="toggleLogInShown()"
+        class="disabled:opacity-100 opacity-50 disabled:cursor-default text-base text-center text-white font-bold mb-6 px-2 mx-1 inline-block rounded-b light uppercase"
+      >
+        Sign Up
+      </button>
+    </div>
+    <div class="grid justify-items-center mb-6">
+      <h2
+        class="border-2 border-light rounded p-1 text-2xl box-shadow-2 logo-bg text-white font-bold w-max"
+      >
+        <span></span><span class="text-5xl font-black text-light">F</span>ind
+        the <span class="text-4xl font-black text-light">P</span>airs
+        <span class="text-4xl text-light font-black"> ||</span>
+      </h2>
+      <span class="italic text-white font-bold mt-1">A Memory Game</span>
+    </div>
+    <ng-template [ngIf]="logInShown">
+      <form
+        [formGroup]="logInForm"
+        class="w-full text-left text-white font-bold"
+        action="POST"
+      >
+        <div class="mb-6">
+          <p class="text-center text-2xl text-white font-black">
+            Log in to start playing
+          </p>
+          <p class="my-3 text-center text-white font-bold">
+            No account?
+            <button
+              (click)="toggleLogInShown()"
+              class="font-bold dark p-1 rounded hover-light hover-text-darkest transition-all duration-700"
             >
-        </h2>
-        <span class="italic text-white font-bold mt-1">A Memory Game</span>
-      </div>
-      <ng-template [ngIf]="logInShown">
-        <form [formGroup]="logInForm" class="w-full text-left text-white font-bold" action="POST">
-            <div class="mb-6">
-                <p class="text-center text-2xl  text-white font-black">Log in to start playing</p>
-                <p class="my-3 text-center text-white font-bold">No account? <button (click)="toggleLogInShown()" class="font-bold dark p-1 rounded hover-light hover-text-darkest transition-all duration-700">Sign Up</button></p>
-            </div>
-            <label class="block font-bold text-white" for="username">Username</label>
-            <input class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="logInUserName" type="text" formControlName="logInUserName">
-            <label class="block font-bold text-white" for="password">Password</label>
-            <input class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="logInPassword" type="password" formControlName="logInPassword">
-            <button [disabled]="!logInForm.valid" class="disabled:opacity-80 disabled:cursor-default w-full my-5 font-bold darkest box-shadow text-white py-4 rounded hover-light hover-text-darkest transition-all duration-700">
-                Log In
-                <span class="material-icons align-bottom float-right mr-4">
-                    login
-                </span>
+              Sign Up
             </button>
-        </form>
-      </ng-template>
-      <ng-template  [ngIf]="!logInShown">
-        <form [formGroup]="signUpForm" class="w-full text-left text-white font-bold" action="POST">
-            <div class="mb-6">
-                <p class="text-center text-2xl  text-white font-black">Sign up to start playing</p>
-                <p class="my-3 text-center text-white font-bold">Already signed up? <button (click)="toggleLogInShown()"  class="dark p-1 font-bold rounded hover-light hover-text-darkest transition-all duration-700">Log In</button></p>
-            </div>
-            <label class="block font-bold text-white relative" for="username">
-              Username
-              <span [ngClass]="{'opacity-0 hidden': userNameToolTipHidden}" class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700">
-                6-12 characters, at least one number one lowercase and one uppercase letter
-              </span>
-            </label>
-            <input (focus)="toggleUsernameToolTip()" (focusout)="toggleUsernameToolTip()" class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signUpUserName" type="text" formControlName="signUpUserName">
-            <label class="block font-bold text-white relative" for="password">
-              Password
-              <span [ngClass]="{'opacity-0 hidden': passwordToolTipHidden}" class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700">
-                6-12 characters, at least one number one lowercase and one uppercase letter
-              </span>
-            </label>
-            <input (focus)="togglePasswordToolTip()" (focusout)="togglePasswordToolTip()" class="border-2 w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" [ngClass]="{'border-red-700': !signUpForm.controls.signUpPassword.valid && signUpForm.controls.signUpPassword.touched, 'border-transparent': signUpForm.controls.signUpPassword.valid && signUpForm.controls.signUpPassword.untouched}"  id="signUpPassword" type="password" formControlName="signUpPassword">
-            <label class="block font-bold text-white relative" for="password">
-              Repeat Password
-              <span [ngClass]="{'opacity-0 hidden': repeatPasswordToolTipHidden}" class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700">
-                Please enter your chosen password again
-              </span>
-            </label>
-            <input (focus)="toggleRepeatPasswordToolTip()" (focusout)="toggleRepeatPasswordToolTip()" class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black" id="signupRepeatPassword" type="password" formControlName="signUpRepeatPassword">
-            <button [disabled]="!signUpForm.valid" class="disabled:opacity-80 disabled:cursor-default w-full my-5 font-bold darkest box-shadow text-white py-4 rounded hover-light hover-text-darkest transition-all duration-700">
-                Sign Up
-                <span class="material-icons align-bottom float-right mr-4">
-                    login
-                </span>
+          </p>
+        </div>
+        <label class="block font-bold text-white" for="username"
+          >Username</label
+        >
+        <input
+          class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black"
+          id="logInUserName"
+          type="text"
+          formControlName="logInUserName"
+        />
+        <label class="block font-bold text-white" for="password"
+          >Password</label
+        >
+        <input
+          class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black"
+          id="logInPassword"
+          type="password"
+          formControlName="logInPassword"
+        />
+        <button
+          [disabled]="!logInForm.valid"
+          class="disabled:opacity-80 disabled:cursor-default w-full my-5 font-bold darkest box-shadow text-white py-4 rounded hover-light hover-text-darkest transition-all duration-700"
+        >
+          Log In
+          <span class="material-icons align-bottom float-right mr-4">
+            login
+          </span>
+        </button>
+      </form>
+    </ng-template>
+    <ng-template [ngIf]="!logInShown">
+      <form
+        [formGroup]="signUpForm"
+        class="w-full text-left text-white font-bold"
+        action="POST"
+      >
+        <div class="mb-6">
+          <p class="text-center text-2xl text-white font-black">
+            Sign up to start playing
+          </p>
+          <p class="my-3 text-center text-white font-bold">
+            Already signed up?
+            <button
+              (click)="toggleLogInShown()"
+              class="dark p-1 font-bold rounded hover-light hover-text-darkest transition-all duration-700"
+            >
+              Log In
             </button>
-        </form>
-      </ng-template>
-     
-    </div> 
+          </p>
+        </div>
+        <label class="block font-bold text-white relative" for="username">
+          Username
+          <span
+            [ngClass]="{ 'opacity-0 hidden': userNameToolTipHidden }"
+            class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700"
+          >
+            6-12 characters, at least one number one lowercase and one uppercase
+            letter
+          </span>
+        </label>
+        <input
+          [ngClass] = "{
+            'bg-red-400': !userNameSignUpInputField.valid && userNameSignUpInputField.touched,
+            'light': userNameSignUpInputField.valid || userNameSignUpInputField.untouched
+          }"
+          (focus)="toggleUsernameToolTip()"
+          (focusout)="toggleUsernameToolTip()"
+          class="w-full rounded font-bold p-3 mb-3 text-white box-shadow focus:outline-none focus:bg-white focus:text-black"
+          id="signUpUserName"
+          type="text"
+          formControlName="signUpUserName"
+        />
+        <label class="block font-bold text-white relative" for="password">
+          Password
+          <span
+            [ngClass]="{ 'opacity-0 hidden': passwordToolTipHidden }"
+            class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700"
+          >
+            6-12 characters, at least one number one lowercase and one uppercase
+            letter
+          </span>
+        </label>
+        <input
+          [ngClass] = "{
+            'bg-red-400': !passwordSignUpInputField.valid && passwordSignUpInputField.touched,
+            'light': passwordSignUpInputField.valid || passwordSignUpInputField.untouched
+          }"
+          (focus)="togglePasswordToolTip()"
+          (focusout)="togglePasswordToolTip()"
+          class="w-full rounded font-bold p-3 mb-3 text-white box-shadow focus:outline-none focus:bg-white focus:text-black"
+          id="signUpPassword"
+          type="password"
+          formControlName="signUpPassword"
+        />
+        <label class="block font-bold text-white relative" for="password">
+          Repeat Password
+          <span
+            [ngClass]="{ 'opacity-0 hidden': repeatPasswordToolTipHidden }"
+            class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700"
+          >
+            Please enter your chosen password again
+          </span>
+        </label>
+        <input
+          [ngClass] = "{
+            'bg-red-400': !passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.touched,
+            'light': passwordRepeatSignUpInputField.valid || passwordRepeatSignUpInputField.untouched
+          }"
+          (focus)="toggleRepeatPasswordToolTip()"
+          (focusout)="toggleRepeatPasswordToolTip()"
+          class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black"
+          id="signupRepeatPassword"
+          type="password"
+          formControlName="signUpRepeatPassword"
+        />
+        <button
+          [disabled]="!signUpForm.valid"
+          [ngClass] = "{
+            'hover-light hover-text-darkest': signUpForm.valid
+          }"
+          class="disabled:opacity-80 disabled:cursor-default w-full my-5 font-bold darkest box-shadow text-white py-4 rounded transition-all duration-700"
+        >
+          Sign Up
+          <span class="material-icons align-bottom float-right mr-4">
+            login
+          </span>
+        </button>
+      </form>
+    </ng-template>
+  </div>
 </div>

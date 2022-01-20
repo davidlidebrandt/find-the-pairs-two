@@ -25,6 +25,10 @@ export class LoginSignupComponent implements OnInit {
     signUpRepeatPassword: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
   })
 
+  userNameSignUpInputField = this.signUpForm.controls.signUpUserName;
+  passwordSignUpInputField = this.signUpForm.controls.signUpPassword;
+  passwordRepeatSignUpInputField = this.signUpForm.controls.signUpRepeatPassword;
+
   ngOnInit(): void {
   }
 
