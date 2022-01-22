@@ -133,7 +133,7 @@
         <input
           (ngModelChange)="inputFieldChanged(passwordSignUpInputField, signUpPasswordHelpText)"
           [ngClass] = "{
-            'bg-red-500': !passwordSignUpInputField.valid && passwordSignUpInputField.touched,
+            'bg-red-200': !passwordSignUpInputField.valid && passwordSignUpInputField.touched,
             'light': passwordSignUpInputField.valid || passwordSignUpInputField.untouched
           }"
           (focus)="togglePasswordToolTip(false)"
@@ -143,21 +143,38 @@
           type="password"
           formControlName="signUpPassword"
         />
-        <label class="block font-bold text-white relative" for="password">
+        <label
+          class="block font-bold text-white relative pb-1" for="password">
+          <ng-template [ngIf]="passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.value === passwordSignUpInputField.value">
+            <span class="material-icons align-middle text-green-400">
+              check_circle
+            </span>
+          </ng-template>
+          <ng-template [ngIf]="!passwordRepeatSignUpInputField.valid || passwordRepeatSignUpInputField.value !== passwordSignUpInputField.value">
+            <span 
+              [class.text-red-400]="passwordRepeatSignUpInputField.touched"
+              class="material-icons align-middle">
+              error
+            </span>
+          </ng-template>
+            
+           
+            
+         
           Repeat Password
-          <span
-            [ngClass]="{ 'opacity-0 hidden': signUpUserRepeatPasswordHelpText.hidden, 'dark': passwordRepeatSignUpInputField.value === '', 'bg-red-600': passwordRepeatSignUpInputField.value !== ''}"
-            class="border-2 mx-1 w-4/6 text-center block absolute -right-1 bottom-1/4 text-sm p-1 rounded-lg box-shadow transition-all duration-700"
+          <div
+            [ngClass]="{ 'opacity-0 hidden': signUpUserRepeatPasswordHelpText.hidden, 'text-light border-medium': passwordRepeatSignUpInputField.value === '', 'text-red-400 border-red-400': passwordRepeatSignUpInputField.value !== ''}"
+            class="border-2 p-2 mx-1 w-4/6 darkest text-center block absolute -right-1 bottom-1/4 text-sm p-1 rounded-lg rounded-br-2xl rounded-tl-2xl box-shadow transition-all duration-700"
           >
-            {{ signUpUserRepeatPasswordHelpText.text }}
-          </span>
+            <p>{{ signUpUserRepeatPasswordHelpText.text }}</p>
+            <span class="material-icons align-bottom inline-block">
+              feedback
+            </span>
+          </div>
+         
         </label>
         <input
           (ngModelChange)="inputFieldChanged(passwordRepeatSignUpInputField, signUpUserRepeatPasswordHelpText)"
-          [ngClass] = "{
-            'bg-red-500': (!passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.touched) || (passwordRepeatSignUpInputField.value !== passwordSignUpInputField.value),
-            'light': (passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.value === passwordSignUpInputField.value) || passwordRepeatSignUpInputField.untouched
-          }"
           (focus)="toggleRepeatPasswordToolTip(false)"
           (focusout)="toggleRepeatPasswordToolTip(true)"
           class="w-full rounded font-bold p-3 mb-3 light text-white box-shadow focus:outline-none focus:bg-white focus:text-black"

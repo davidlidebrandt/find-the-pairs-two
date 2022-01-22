@@ -21,7 +21,7 @@ body {
     background-size: cover;
 }
 
-#cardw-bg, .logo-bg {
+#card-bg, .logo-bg {
     background: url("./assets/images/6230956.jpg") center no-repeat;
     background-size: cover;
 }
@@ -84,6 +84,10 @@ body {
 
 .darkest {
     background-color: #06070d;
+}
+
+.warning-gradient {
+    background: linear-gradient(to right, #06070d, red);
 }
 
 .gradient {
@@ -189,6 +193,7 @@ body {
 }
 
 .center-fixed-x {
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
