@@ -14,10 +14,6 @@ export class LoginSignupComponent implements OnInit {
   constructor() { }
   
   logInShown:boolean = true;
-  
-  userNameToolTipHidden:boolean = true;
-  passwordToolTipHidden:boolean = true;
-  repeatPasswordToolTipHidden = true;
 
   logInForm = new FormGroup({
     logInUserName: new FormControl('', Validators.required),
@@ -86,16 +82,19 @@ export class LoginSignupComponent implements OnInit {
     this.logInShown = !this.logInShown;
   }
 
-  toggleUsernameToolTip():void {
-    this.signUpUserNameHelpText.hidden = !this.signUpUserNameHelpText.hidden;
+  toggleUsernameToolTip(hidden:boolean):void {
+    if(this.signUpUserNameHelpText.text !== "") this.signUpUserNameHelpText.hidden = hidden;
+    else this.signUpUserNameHelpText.hidden = true;
   }
 
-  togglePasswordToolTip():void {
-    this.signUpPasswordHelpText.hidden = !this.signUpPasswordHelpText.hidden;
+  togglePasswordToolTip(hidden:boolean):void {
+    if(this.signUpPasswordHelpText.text !== "") this.signUpPasswordHelpText.hidden = hidden;
+    else this.signUpPasswordHelpText.hidden = true;
   }
 
-  toggleRepeatPasswordToolTip():void {
-    this.signUpUserRepeatPasswordHelpText.hidden = !this.signUpUserRepeatPasswordHelpText.hidden;
+  toggleRepeatPasswordToolTip(hidden:boolean):void {
+    if(this.signUpUserRepeatPasswordHelpText.text !== "") this.signUpUserRepeatPasswordHelpText.hidden = hidden;
+    else this.signUpUserRepeatPasswordHelpText.hidden = true;
   }
 
 
