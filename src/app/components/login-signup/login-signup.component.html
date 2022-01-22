@@ -78,6 +78,7 @@
         </button>
       </form>
     </ng-template>
+    
     <ng-template [ngIf]="!logInShown">
       <form
         [formGroup]="signUpForm"
@@ -101,14 +102,14 @@
         <label class="block font-bold text-white relative" for="username">
           Username
           <span
-            [ngClass]="{ 'opacity-0 hidden': userNameToolTipHidden }"
+            [ngClass]="{ 'opacity-0 hidden': signUpUserNameHelpText.hidden, 'darkest': userNameSignUpInputField.value === '', 'bg-red-400': userNameSignUpInputField.value !== '' }"
             class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700"
           >
-            6-12 characters, at least one number one lowercase and one uppercase
-            letter
+            {{ signUpUserNameHelpText.text }}
           </span>
         </label>
         <input
+          (ngModelChange)="inputFieldChanged(userNameSignUpInputField, signUpUserNameHelpText)"
           [ngClass] = "{
             'bg-red-400': !userNameSignUpInputField.valid && userNameSignUpInputField.touched,
             'light': userNameSignUpInputField.valid || userNameSignUpInputField.untouched
@@ -123,14 +124,14 @@
         <label class="block font-bold text-white relative" for="password">
           Password
           <span
-            [ngClass]="{ 'opacity-0 hidden': passwordToolTipHidden }"
-            class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700"
+            [ngClass]="{ 'opacity-0 hidden': signUpPasswordHelpText.hidden, 'darkest': passwordSignUpInputField.value === '', 'bg-red-400': passwordSignUpInputField.value !== '' }"
+            class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm p-1 rounded-xl box-shadow transition-all duration-700"
           >
-            6-12 characters, at least one number one lowercase and one uppercase
-            letter
+            {{ signUpPasswordHelpText.text }}
           </span>
         </label>
         <input
+          (ngModelChange)="inputFieldChanged(passwordSignUpInputField, signUpPasswordHelpText)"
           [ngClass] = "{
             'bg-red-400': !passwordSignUpInputField.valid && passwordSignUpInputField.touched,
             'light': passwordSignUpInputField.valid || passwordSignUpInputField.untouched
@@ -145,13 +146,14 @@
         <label class="block font-bold text-white relative" for="password">
           Repeat Password
           <span
-            [ngClass]="{ 'opacity-0 hidden': repeatPasswordToolTipHidden }"
-            class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm darkest p-1 rounded-xl box-shadow transition-all duration-700"
+            [ngClass]="{ 'opacity-0 hidden': signUpUserRepeatPasswordHelpText.hidden, 'darkest': passwordRepeatSignUpInputField.value === '', 'bg-red-400': passwordRepeatSignUpInputField.value !== ''}"
+            class="opacity-90 mx-1 w-5/6 text-center block absolute -right-5 bottom-full text-sm p-1 rounded-xl box-shadow transition-all duration-700"
           >
-            Please enter your chosen password again
+            {{ signUpUserRepeatPasswordHelpText.text }}
           </span>
         </label>
         <input
+          (ngModelChange)="inputFieldChanged(passwordRepeatSignUpInputField, signUpUserRepeatPasswordHelpText)"
           [ngClass] = "{
             'bg-red-400': (!passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.touched) || (passwordRepeatSignUpInputField.value !== passwordSignUpInputField.value),
             'light': (passwordRepeatSignUpInputField.valid && passwordRepeatSignUpInputField.value === passwordSignUpInputField.value) || passwordRepeatSignUpInputField.untouched
