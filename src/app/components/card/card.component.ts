@@ -35,14 +35,15 @@ export class CardComponent implements OnInit {
   }
 
   turnCardFront(): void {
-    this.disabledCard = true;
+    console.log("f")
+    this.currentCard.disabled = true;
     if(this.lastCard.name === this.icon) {
       this.lastCard.name = "";
       this.lastCard.disabledCard = {disabled:false}
       console.log("h")
     } else if(this.lastCard.name!== "") {
       this.lastCard.name = "";
-      this.disabledCard = false;
+      this.currentCard.disabled = false;
       let lastCard = this.lastCard.disabledCard;
       lastCard.disabled = false;
       this.lastCard.disabledCard = {disabled:false}
@@ -59,8 +60,9 @@ export class CardComponent implements OnInit {
     }, 500);
 
   }
-
+  
   turnCardBack() {
+    console.log("b")
     this.perspectiveShown = false;
     setTimeout(() => {
       this.backHidden = true;
