@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 
+interface icon {
+  name:string,
+  disabledCard:boolean
+}
+
+export interface lastCard {
+  name: string,
+  disabledCard:{disabled:boolean}
+}
+
 @Component({
   selector: 'app-cardwindow',
   templateUrl: './cardwindow.component.html',
@@ -8,11 +18,30 @@ import { CardComponent } from '../card/card.component';
 })
 export class CardwindowComponent implements OnInit {
 
-  icons: string[] = ['favorite', 'favorite', 'group_work', 'group_work', 'filter_alt', 'filter_alt', 'lightbulb', 'lightbulb'
-  ,'star_rate', 'star_rate', 'pets', 'pets', 'pending', 'pending', 'offline_bolt', 'offline_bolt', 'settings_input_hdmi', 'settings_input_hdmi'
+lastCard:lastCard = {name: "", disabledCard: {disabled:false}};
+favorite:boolean = true;
+group_work:boolean = true;
+filter_alt:boolean = true;
+lightbulb:boolean = true;
+star_rate:boolean = true;
+pets:boolean = true;
+pending:boolean = true;
+offline_bolt:boolean = true;
+settings_input_hdmi:boolean = true;
+
+icons: icon[] = [
+  {name:'favorite', disabledCard:this.favorite}, {name:'favorite', disabledCard:this.favorite}, 
+  {name:'group_work', disabledCard:this.group_work}, {name:'group_work', disabledCard:this.group_work},
+  {name:'filter_alt', disabledCard:this.filter_alt}, {name:'filter_alt', disabledCard:this.filter_alt},
+  {name:'lightbulb', disabledCard:this.lightbulb}, {name:'lightbulb', disabledCard:this.lightbulb},
+  {name:'star_rate', disabledCard:this.star_rate}, {name:'star_rate', disabledCard:this.star_rate},
+  {name:'pets', disabledCard:this.pets}, {name:'pets', disabledCard:this.pets},
+  {name:'pending', disabledCard:this.pending}, {name:'pending', disabledCard:this.pending},
+  {name:'offline_bolt', disabledCard:this.offline_bolt}, {name:'offline_bolt', disabledCard:this.offline_bolt},
+  {name:'settings_input_hdmi', disabledCard:this.settings_input_hdmi}, {name:'settings_input_hdmi', disabledCard:this.settings_input_hdmi}, 
 ]
 
-  shuffleCards(array: string[]) {
+  shuffleCards(array: icon[]) {
     this.icons.sort(() => Math.random() - 0.5);
   }
 

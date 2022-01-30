@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GameServiceService, Game } from 'src/app/services/game-service.service';
+import { lastCard } from '../cardwindow/cardwindow.component';
 
 @Component({
   selector: 'app-card',
@@ -9,13 +10,17 @@ import { GameServiceService, Game } from 'src/app/services/game-service.service'
 export class CardComponent implements OnInit {
 
   @Input() icon!: string;
+  @Input() disabledCard!:boolean;
+  @Input() lastCard!:lastCard;
 
+  currentCard = {
+    disabled: this.disabledCard,
+  }
+  
+  
   timeLeft!:number;
   score!:number;
-  currentCard:string ="";
-  lastCard:string = "";
-  disabled:boolean = false;
-
+ 
   frontHidden:boolean = false;
   backHidden:boolean = true;
   perspectiveShown:boolean = false;
@@ -30,14 +35,21 @@ export class CardComponent implements OnInit {
   }
 
   turnCardFront(): void {
-    if (this.lastCard === this.icon) {
-      this.disabled = true;
-      this.lastCard = "";
-    } else if (this.lastCard !== "") {
-      this.lastCard = ""
+    this.disabledCard = true;
+    if(this.lastCard.name === this.icon) {
+      this.lastCard.name = "";
+      this.lastCard.disabledCard = {disabled:false}
+      console.log("h")
+    } else if(this.lastCard.name!== "") {
+      this.lastCard.name = "";
+      this.disabledCard = false;
+      let lastCard = this.lastCard.disabledCard;
+      lastCard.disabled = false;
+      this.lastCard.disabledCard = {disabled:false}
     } else {
-      this.lastCard = this.icon;
-    }
+      this.lastCard.name = this.icon;
+      this.lastCard.disabledCard = this.currentCard;
+       }
     this.perspectiveShown = true;
     setTimeout(() => {
       this.frontHidden = true;

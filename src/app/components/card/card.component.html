@@ -5,12 +5,12 @@
         </div>
         
     </div>
-    <div [attr.disabled]="disabled" (click)="turnCardBack()" [class.hidden]="backHidden" class="back relative w-full h-full light rounded">
+    <button [disabled]="currentCard.disabled" (click)="turnCardBack()" [class.hidden]="backHidden" class="back relative w-full h-full light rounded">
         <div class="center-abs-xy">
             <span class="material-icons">
                 {{icon}}
             </span>
         </div>
         
-    </div>
+    </button>
 </div>
