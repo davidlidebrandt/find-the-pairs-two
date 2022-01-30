@@ -45,6 +45,10 @@ export class LoginSignupComponent implements OnInit {
   }
 
   inputFieldChanged(inputFieldControl: AbstractControl, inputHelpText:Error):void {
+    if(inputFieldControl === this.passwordRepeatSignUpInputField && inputFieldControl.value !== this.passwordSignUpInputField.value) {
+      inputHelpText.text = "Passwords do not match"
+      return
+    }
     if(inputFieldControl.value === "" && inputFieldControl === this.passwordRepeatSignUpInputField) {
       inputHelpText.text = 'Please enter your chosen password again';
       return
@@ -73,6 +77,8 @@ export class LoginSignupComponent implements OnInit {
     } else if(maxLengthError) {
       inputHelpText.text = "Your password is too long"
     }
+
+  
   }
 
   ngOnInit(): void {
