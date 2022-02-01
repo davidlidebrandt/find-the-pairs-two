@@ -19,6 +19,7 @@ export interface lastCard {
 export class CardwindowComponent implements OnInit {
 
 lastCard:lastCard = {name: "", disabledCard: {disabled:false}};
+allDisabled:boolean = false;
 favorite:boolean = true;
 group_work:boolean = true;
 filter_alt:boolean = true;
@@ -43,6 +44,13 @@ icons: icon[] = [
 
   shuffleCards(array: icon[]) {
     this.icons.sort(() => Math.random() - 0.5);
+  }
+
+  disableAllCards():void {
+    this.allDisabled = true;
+    setTimeout(() => {
+      this.allDisabled = false;
+    }, 500)
   }
 
   constructor() { }

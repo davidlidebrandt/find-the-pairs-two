@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GameServiceService, Game } from 'src/app/services/game-service.service';
 import { lastCard } from '../cardwindow/cardwindow.component';
 
@@ -12,6 +12,12 @@ export class CardComponent implements OnInit {
   @Input() icon!: string;
   @Input() disabledCard!:boolean;
   @Input() lastCard!:lastCard;
+  @Input() allDisabled!:boolean;
+
+  @Output() disableAll = new EventEmitter();
+  @Output() turnBackCards = new EventEmitter();
+
+  turnedCards!: HTMLElement[];
 
   currentCard = {
     disabled: this.disabledCard,
@@ -34,9 +40,13 @@ export class CardComponent implements OnInit {
     })
   }
 
-  turnCardFront(): void {
-    console.log("f")
+  turnCardFront($event:Event): void {
+    let currentCard = $event.currentTarget as HTMLButtonElement;
+    console.log(currentCard)
     this.currentCard.disabled = true;
+    if(this.lastCard.name !== "") {
+      this.disableAll.emit();
+    }
     if(this.lastCard.name === this.icon) {
       this.lastCard.name = "";
       this.lastCard.disabledCard = {disabled:false}
@@ -47,6 +57,12 @@ export class CardComponent implements OnInit {
       let lastCard = this.lastCard.disabledCard;
       lastCard.disabled = false;
       this.lastCard.disabledCard = {disabled:false}
+      setTimeout(() => {
+        if(currentCard) {
+          currentCard.click();
+        }
+       
+      }, 1000)
     } else {
       this.lastCard.name = this.icon;
       this.lastCard.disabledCard = this.currentCard;
