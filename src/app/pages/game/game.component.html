@@ -1,3 +1,4 @@
+<ng-template [ngIf]="!game.getGame().lost">
 <div
   id=""
   class="darkest logo-bg min-h-screen grid grid-cols-12 justify-items-center pb-8"
@@ -34,3 +35,21 @@
     (closeGameWarningModal)="toggleGameWarningModal()"
   ></app-game-warning-modal>
 </div>
+</ng-template>
+<ng-template [ngIf]="game.getGame().lost">
+  <div class="min-h-screen w-full light grid place-content-center">
+    <div class="text-light rounded p-4 dark">
+      <div class="font-bold text-2xl">
+        Sorry the game was lost
+      </div>
+      <div class="text-center">
+        <span class="material-icons text-4xl text-white">
+        sentiment_very_dissatisfied
+        </span>
+      </div>
+      <button class="m-auto text-white font-bold my-3 light rounded block w-full py-3">New Game</button>
+      <button class="m-auto text-white font-bold my-3 light rounded block w-full py-2">Return Home</button>
+    </div>
+   
+  </div>
+</ng-template>

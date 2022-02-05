@@ -48,6 +48,7 @@ export class CardComponent implements OnInit {
       this.disableAll.emit();
 
       if (this.lastCard.name === this.icon) {
+        this.game.addTime();
         this.lastCard.name = '';
         this.lastCard.disabledCard = { disabled: false };
         this.addToFoundCards.emit(this.icon)
