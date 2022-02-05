@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 
 interface icon {
@@ -18,8 +18,10 @@ export interface lastCard {
 })
 export class CardwindowComponent implements OnInit {
 
+@ViewChildren('childCards') components!:QueryList<CardComponent>;
 lastCard:lastCard = {name: "", disabledCard: {disabled:false}};
 allDisabled:boolean = false;
+foundCards:string[] = [];
 favorite:boolean = true;
 group_work:boolean = true;
 filter_alt:boolean = true;
@@ -47,10 +49,19 @@ icons: icon[] = [
   }
 
   disableAllCards():void {
-    this.allDisabled = true;
-    setTimeout(() => {
-      this.allDisabled = false;
-    }, 500)
+      this.allDisabled = true;
+  }
+
+  turnBackNotFoundCards():void {
+    this.components.forEach((component)=> {
+      if(!this.foundCards.includes(component.icon)) component.turnCardBack();
+    });
+    this.allDisabled = false;
+  }
+
+  addCardToFoundCardsArray(icon:any):void {
+    this.foundCards.push(icon.name);
+    this.allDisabled = false;
   }
 
   constructor() { }
