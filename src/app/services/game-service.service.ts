@@ -5,7 +5,8 @@ import { SettingsDataService } from './settings-data.service';
 export interface Game {
   time:number,
   score:number,
-  lost:boolean
+  lost:boolean,
+  gameWon:boolean
 }
 
 @Injectable({
@@ -14,7 +15,7 @@ export interface Game {
 export class GameServiceService {
   constructor(private settings:SettingsDataService) { }
 
-  game:Game = {time:100, score:0, lost:false};
+  game:Game = {time:100, score:0, lost:false, gameWon:false};
 
   //Not used
   getNewGame():Observable<Game> {
@@ -45,6 +46,10 @@ export class GameServiceService {
     })
     this.game.time += calculateAddedTime;
     return this.game;
+  }
+
+  gameWon():void {
+    this.game.gameWon = true;
   }
 
   addScore():Game {

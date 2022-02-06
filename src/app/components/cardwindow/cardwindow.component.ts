@@ -71,6 +71,7 @@ icons: icon[] = [
     this.foundCards.push(icon.name);
     this.enableCards();
     this.game.addScore();
+    if(this.foundCards.length === 9) this.game.gameWon();
   }
 
   ngOnInit(): void {

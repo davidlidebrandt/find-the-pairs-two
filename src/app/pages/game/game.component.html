@@ -1,4 +1,4 @@
-<ng-template [ngIf]="!game.getGame().lost">
+<ng-template [ngIf]="!game.getGame().lost && !game.getGame().gameWon">
 <div
   id=""
   class="darkest logo-bg min-h-screen grid grid-cols-12 justify-items-center pb-8"
@@ -35,6 +35,11 @@
     (closeGameWarningModal)="toggleGameWarningModal()"
   ></app-game-warning-modal>
 </div>
+</ng-template>
+<ng-template [ngIf]="game.getGame().gameWon">
+  <div class="min-h-screen w-full vector-bg  grid place-content-center">
+    
+  </div>
 </ng-template>
 <ng-template [ngIf]="game.getGame().lost">
   <div class="min-h-screen w-full vector-bg  grid place-content-center">
