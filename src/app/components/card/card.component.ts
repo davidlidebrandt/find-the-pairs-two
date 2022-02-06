@@ -17,6 +17,7 @@ export class CardComponent implements OnInit {
   @Input() allDisabled!: boolean;
 
   @Output() disableAll = new EventEmitter();
+  @Output() enableCardsClick = new EventEmitter();
   @Output() turnBackCards = new EventEmitter();
   @Output() addToFoundCards = new EventEmitter();
 
@@ -60,7 +61,7 @@ export class CardComponent implements OnInit {
         this.lastCard.disabledCard = { disabled: false };
         setTimeout(()=> {
           this.turnBackCards.emit();
-        }, 1000)
+        }, 1500)
       }
       
     } else {
@@ -83,6 +84,7 @@ export class CardComponent implements OnInit {
     }, 300);
     setTimeout(() => {
       this.frontHidden = false;
+      this.enableCardsClick.emit();
     }, 500);
   }
 }

@@ -52,16 +52,19 @@ icons: icon[] = [
       this.allDisabled = true;
   }
 
+  enableCards():void {
+    this.allDisabled = false;
+  }
+
   turnBackNotFoundCards():void {
     this.components.forEach((component)=> {
       if(!this.foundCards.includes(component.icon)) component.turnCardBack();
     });
-    this.allDisabled = false;
   }
 
   addCardToFoundCardsArray(icon:any):void {
     this.foundCards.push(icon.name);
-    this.allDisabled = false;
+    this.enableCards();
   }
 
   constructor() { }

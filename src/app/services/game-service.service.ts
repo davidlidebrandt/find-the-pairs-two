@@ -13,7 +13,7 @@ export interface Game {
 export class GameServiceService {
   constructor() { }
 
-  game:Game = {time:2, score:1000, lost:false};
+  game:Game = {time:100, score:1000, lost:false};
 
   //Not used
   getNewGame():Observable<Game> {
