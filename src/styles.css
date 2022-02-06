@@ -15,7 +15,7 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-#home-bg, #game-bg {
+#home-bg, #game-bg, .vector-bg {
     min-height: 100vh;
     background: url("./assets/images/6230956.jpg") center no-repeat;
     background-size: cover;

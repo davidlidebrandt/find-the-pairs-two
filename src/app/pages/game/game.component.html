@@ -37,18 +37,40 @@
 </div>
 </ng-template>
 <ng-template [ngIf]="game.getGame().lost">
-  <div class="min-h-screen w-full light grid place-content-center">
-    <div class="text-light rounded p-4 dark">
-      <div class="font-bold text-2xl">
-        Sorry the game was lost
+  <div class="min-h-screen w-full vector-bg  grid place-content-center">
+    <div class="text-light rounded pb-8 gradient-2">
+      <div class="medium rounded-t p-4">
+        <h2 class="m-auto font-bold w-max text-2xl border-light text-white rounded p-1 mb-4 logo-bg">
+          <span class="text-3xl font-black text-light">F</span>ind the
+          <span class="text-3xl font-black text-light">P</span>airs
+          <span class="text-3xl text-light font-black"> ||</span
+          >
+        </h2>
       </div>
-      <div class="text-center">
-        <span class="material-icons text-4xl text-white">
-        sentiment_very_dissatisfied
-        </span>
+      <div class="p-8 pt-4">
+        <div class="font-bold text-xl text-white rounded p-2 mb-8">
+          <div class="text-center mb-2">
+            <span class="material-icons text-5xl font-bold text-darker animate-pulse">
+            sentiment_very_dissatisfied
+            </span>
+          </div>
+          Sorry the game was lost
+        
+        </div>
+        
+        <button class="box-shadow m-auto text-white font-bold my-3 dark rounded block w-full py-3 hover-light hover-text-darkest transition-all duration-700">
+          New Game 
+          <span class="material-icons align-middle">
+            play_circle
+          </span></button>
+        <button class="box-shadow m-auto text-white font-bold my-3 dark rounded block w-full py-2 hover-light hover-text-darkest transition-all duration-700">
+          Return Home
+          <span class="material-icons align-middle">
+            home
+          </span>
+        </button>
       </div>
-      <button class="m-auto text-white font-bold my-3 light rounded block w-full py-3">New Game</button>
-      <button class="m-auto text-white font-bold my-3 light rounded block w-full py-2">Return Home</button>
+  
     </div>
    
   </div>
