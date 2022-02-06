@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { GameServiceService } from 'src/app/services/game-service.service';
 import { CardComponent } from '../card/card.component';
 
 interface icon {
@@ -18,7 +19,11 @@ export interface lastCard {
 })
 export class CardwindowComponent implements OnInit {
 
+
 @ViewChildren('childCards') components!:QueryList<CardComponent>;
+
+constructor(private game:GameServiceService) { }
+
 lastCard:lastCard = {name: "", disabledCard: {disabled:false}};
 allDisabled:boolean = false;
 foundCards:string[] = [];
@@ -65,9 +70,8 @@ icons: icon[] = [
   addCardToFoundCardsArray(icon:any):void {
     this.foundCards.push(icon.name);
     this.enableCards();
+    this.game.addScore();
   }
-
-  constructor() { }
 
   ngOnInit(): void {
     this.shuffleCards(this.icons) 
