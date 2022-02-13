@@ -77,6 +77,8 @@
           </span>
         </button>
       </form>
+      <button (click)="login()">Log In With Google</button>
+      <button (click)="logout()">Log Out</button>
     </ng-template>
     
     <ng-template [ngIf]="!logInShown">

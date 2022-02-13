@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { BestScoresComponent } from './components/best-scores/best-scores.compon
 import { SettingsComponent } from './components/settings/settings.component';
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 import { GameWarningModalComponent } from './components/game-warning-modal/game-warning-modal.component'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,10 @@ import { GameWarningModalComponent } from './components/game-warning-modal/game-
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase), 
+    AngularFireDatabaseModule, 
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

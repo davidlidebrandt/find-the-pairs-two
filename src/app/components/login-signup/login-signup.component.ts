@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserAuthService } from 'src/app/services/user-auth.service';
+
 
 interface Error {
     'text':string,
@@ -11,7 +13,9 @@ interface Error {
   styleUrls: ['./login-signup.component.css']
 })
 export class LoginSignupComponent implements OnInit {
-  constructor() { }
+  constructor(private userAuth: UserAuthService) { 
+    this.userAuth.authState();
+  }
   
   logInShown:boolean = true;
 
@@ -82,6 +86,16 @@ export class LoginSignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  login():void {
+    this.userAuth.login();
+    this.userAuth.authState();
+  }
+
+  logout(): void {
+    this.userAuth.logout();
+    this.userAuth.authState();
   }
 
   toggleLogInShown():void {
