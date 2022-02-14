@@ -4,15 +4,15 @@
         </h1>
         <span class="block italic text-white font-bold mt-3">A Memory Game</span>  
     </div>
-    <div class="text-center m-auto px-4 pb-4 text-darkest">
+    <div class="text-center m-auto px-4 pb-2 text-darkest">
         <a routerLink="/game" (mouseover)="toggleAnimateButton('startGameButton')" (mouseout)="toggleAnimateButton()" class="py-6 my-7 block text-center w-full dark text-white font-bold rounded hover-light hover-text-darkest transition-all duration-700">Start Game <span [class.animate-spin]="animateButton === 'startGameButton'" class="material-icons align-bottom float-right mr-6">play_circle</span></a>
         <button (click)="toggleHomeModal('Settings', 'settings')"  (mouseover)="toggleAnimateButton('settingsButton')" (mouseout)="toggleAnimateButton()" class="py-3 my-5 block text-center w-full darkest text-white font-bold rounded hover-light hover-text-darkest transition-all duration-700">Settings <span [class.animate-spin]="animateButton === 'settingsButton'" class="material-icons align-bottom float-right mr-6">settings</span></button>
         <button (click)="toggleHomeModal('How To Play', 'howToPlay')" (mouseover)="toggleAnimateButton('howToPlayButton')" (mouseout)="toggleAnimateButton()" class="py-3 my-5 block text-center w-full darkest text-white font-bold rounded hover-light hover-text-darkest transition-all duration-700" >How To Play <span [class.animate-spin]="animateButton === 'howToPlayButton'" class="material-icons align-bottom float-right mr-6">help</span></button>
         <button (click)="toggleHomeModal('Leader Board', 'leaderBoard')" (mouseover)="toggleAnimateButton('leaderBoardButton')" (mouseout)="toggleAnimateButton()" class="py-3 my-5 block text-center w-full darkest text-white font-bold rounded hover-light hover-text-darkest transition-all duration-700">Leader Board <span [class.animate-spin]="animateButton === 'leaderBoardButton'" class="material-icons align-bottom float-right mr-6">leaderboard</span></button>
-        <button (click)="toggleHomeModal('Your Best Scores', 'bestScores')" (mouseover)="toggleAnimateButton('bestScoresButton')" (mouseout)="toggleAnimateButton()" class="py-3 my-5 mb-8 block text-center w-full darkest text-white font-bold rounded hover-light hover-text-darkest transition-all duration-700">Your Best Scores <span [class.animate-spin]="animateButton === 'bestScoresButton'" class="material-icons align-bottom float-right mr-6">sports_score</span></button>
+        <button (click)="toggleHomeModal('Your Best Scores', 'bestScores')" (mouseover)="toggleAnimateButton('bestScoresButton')" (mouseout)="toggleAnimateButton()" class="py-3 my-5 mb-4 block text-center w-full darkest text-white font-bold rounded hover-light hover-text-darkest transition-all duration-700">Your Best Scores <span [class.animate-spin]="animateButton === 'bestScoresButton'" class="material-icons align-bottom float-right mr-6">sports_score</span></button>
     </div>
     <div class="w-full">
-        <button class="m-auto gradient-2 box-shadow text-white font-bold mb-5 w-1/3 block py-2 rounded hover-light hover-text-darkest transition-all duration-700" (click)="logout()">
+        <button class="m-auto dark border text-white font-bold mb-5 w-1/3 block py-2 rounded hover-light hover-text-darkest transition-all duration-700" (click)="logout()">
             Log Out
             <span class="material-icons align-middle float-right mx-1">
                 logout
