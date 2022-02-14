@@ -11,8 +11,8 @@ export class UserAuthGuardService implements CanActivate {
   constructor(public authService:UserAuthService, public router:Router) { }
 
   canActivate():boolean {
-    this.authService.getIfUserIsLoggedIn().subscribe((user)=> {
-      this.canActivatePath = user.isLoggedIn
+    this.authService.user.subscribe((user)=> {
+      this.canActivatePath = user? true : false;
     })
     return this.canActivatePath
   }

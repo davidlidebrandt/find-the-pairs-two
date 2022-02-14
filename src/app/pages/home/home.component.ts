@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAuthService, User } from 'src/app/services/user-auth.service';
+import * as firebase from 'firebase';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +9,15 @@ import { UserAuthService, User } from 'src/app/services/user-auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  userInfo!:User;
-  isLoggedIn!:boolean;
 
-  constructor(private userAuthInfo: UserAuthService) { }
+  constructor(public userAuthInfo: UserAuthService) { 
+  
+  }
 
   ngOnInit(): void {
-    this.userAuthInfo.getIfUserIsLoggedIn().subscribe(data => {
-      this.userInfo = data;
-    })
-    this.isLoggedIn = this.userInfo.isLoggedIn;
+    
   }
+
+  
 
 }

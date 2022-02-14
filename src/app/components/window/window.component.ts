@@ -1,5 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { UserAuthService } from 'src/app/services/user-auth.service';
 @Component({
   selector: 'app-window',
   templateUrl: './window.component.html',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WindowComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: UserAuthService) { }
 
   ngOnInit(): void {
+  }
+
+  logout():void {
+    this.auth.logout();
   }
 
   mainWindowHidden: boolean = false;

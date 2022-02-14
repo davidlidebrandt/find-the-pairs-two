@@ -11,18 +11,13 @@ export interface User {
   providedIn: 'root'
 })
 export class UserAuthService {
+  user!: Observable<firebase.User | null>
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth) {
+    this.user = this.afAuth.authState;
+   }
 
-  userState!: Observable<firebase.User>
-
-  getIfUserIsLoggedIn():Observable<User> {
-    const userIsLoggedIn = false;
-    const userObserver = of({
-      isLoggedIn: userIsLoggedIn
-    })
-    return userObserver;
-  }
+  
 
   login():void {
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
@@ -33,9 +28,7 @@ export class UserAuthService {
   }
 
   authState() {
-    this.afAuth.authState.subscribe((as) => {
-      console.log(as)
-    })
+    return this.afAuth.authState;
   }
 
 }
