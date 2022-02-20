@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameServiceService } from 'src/app/services/game-service.service';
+import { WarningConfirmedPaths } from 'src/app/components/game-warning-modal/game-warning-modal.component';
 
 @Component({
   selector: 'app-game',
@@ -18,12 +19,13 @@ export class GameComponent implements OnInit {
   gameWarningClosed:boolean = true;
   warningText:string = "";
   proceedIcon:string = "";
-  routerPathHome:boolean = true;
+  warningConfirmedPaths = WarningConfirmedPaths;
+  warningConfirmedPath: string = "";
 
-  toggleGameWarningModal(warningText="", proceedIcon="", routerPath=true):void {
+  toggleGameWarningModal(warningText="", proceedIcon="",  warningConfirmedPath=""):void {
     this.warningText = warningText;
     this.proceedIcon = proceedIcon;
-    this.routerPathHome = routerPath;
+    this.warningConfirmedPath = warningConfirmedPath;
     this.gameWarningClosed = !this.gameWarningClosed;
   }
 

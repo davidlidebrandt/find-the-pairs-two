@@ -29,6 +29,7 @@ import { LoginSignupComponent } from './components/login-signup/login-signup.com
 import { GameWarningModalComponent } from './components/game-warning-modal/game-warning-modal.component'
 import { environment } from 'src/environments/environment';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { environment } from 'src/environments/environment';
     BestScoresComponent,
     SettingsComponent,
     LoginSignupComponent,
-    GameWarningModalComponent
+    GameWarningModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+export enum WarningConfirmedPaths {
+  HOME = "home",
+  RESTART_GAME = "restart game",
+  LOG_OUT = "log out"
+}
+
 @Component({
   selector: 'app-game-warning-modal',
   templateUrl: './game-warning-modal.component.html',
@@ -15,7 +21,7 @@ export class GameWarningModalComponent implements OnInit {
   @Input() gameWarningClosed!:boolean;
   @Input() warningText!:string;
   @Input() proceedIcon!:string;
-  @Input() routerPathHome!:boolean;
+  @Input() routerPathHome!: string;
 
   @Output() closeGameWarningModal = new EventEmitter();
 

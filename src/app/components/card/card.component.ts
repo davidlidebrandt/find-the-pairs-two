@@ -29,10 +29,10 @@ export class CardComponent implements OnInit {
 
   timeLeft!: number;
   score!: number;
-
   frontHidden: boolean = false;
   backHidden: boolean = true;
   perspectiveShown: boolean = false;
+  cardFound!:boolean;
 
   constructor(private game: GameServiceService) {}
 
@@ -41,6 +41,11 @@ export class CardComponent implements OnInit {
       this.timeLeft = newGameData.time;
       this.score = newGameData.score;
     });
+  }
+
+  markAsFound():void {
+    console.log("h")
+    this.cardFound = true;
   }
 
   turnCardFront($event: Event): void {

@@ -64,13 +64,21 @@ icons: icon[] = [
   turnBackNotFoundCards():void {
     this.components.forEach((component)=> {
       if(!this.foundCards.includes(component.icon)) component.turnCardBack();
+     
     });
+  }
+
+  markFoundCards(icon:string): void {
+    this.components.forEach((component)=> {
+      if(component.icon === icon) component.markAsFound();
+    })
   }
 
   addCardToFoundCardsArray(icon:any):void {
     this.foundCards.push(icon.name);
     this.enableCards();
     this.game.addScore();
+    this.markFoundCards(icon.name)
     if(this.foundCards.length === 9) this.game.gameWon();
   }
 

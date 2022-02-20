@@ -10,14 +10,14 @@
       toggleGameWarningModal(
         'If you return home all data from this round will be lost',
         'home',
-        true
+        warningConfirmedPaths.HOME
       )
     "
     (openRestartModal)="
       toggleGameWarningModal(
         'If your restart the game all data from this round will be lost',
         'restart_alt',
-        false
+        warningConfirmedPaths.RESTART_GAME
       )
     "
     class="
@@ -31,7 +31,7 @@
     [gameWarningClosed]="gameWarningClosed"
     [warningText]="warningText"
     [proceedIcon]="proceedIcon"
-    [routerPathHome]="routerPathHome"
+    [routerPathHome]="warningConfirmedPath"
     (closeGameWarningModal)="toggleGameWarningModal()"
   ></app-game-warning-modal>
 </div>
