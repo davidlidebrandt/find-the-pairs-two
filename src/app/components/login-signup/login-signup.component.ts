@@ -24,6 +24,9 @@ export class LoginSignupComponent implements OnInit {
     logInPassword: new FormControl('', Validators.required),
   })
 
+  logInFormUserName = this.logInForm.controls.logInUserName;
+  logInFormPassword = this.logInForm.controls.logInPassword;
+
   signUpForm = new FormGroup({
     signUpUserName: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
     signUpPassword: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
@@ -93,9 +96,17 @@ export class LoginSignupComponent implements OnInit {
     this.userAuth.authState();
   }
 
+  logInWithEmailAndPassword(email:string, password:string) {
+    this.userAuth.logInWithEmailAndPassword(email, password);
+  }
+
   logout(): void {
     this.userAuth.logout();
     this.userAuth.authState();
+  }
+
+  signUp(email:string, password: string) {
+    this.userAuth.signUp(email, password);
   }
 
   toggleLogInShown():void {

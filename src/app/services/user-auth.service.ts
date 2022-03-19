@@ -23,6 +23,30 @@ export class UserAuthService {
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
 
+  logInWithEmailAndPassword(email: string, password: string) {
+    this.afAuth
+      .auth
+      .signInWithEmailAndPassword(email, password)
+      .then(res => {
+        console.log('Successfully signed in!');
+      })
+      .catch(err => {
+        console.log('Something is wrong:',err.message);
+      });
+  }
+
+  signUp(email: string, password: string) {
+    this.afAuth
+      .auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(res => {
+        console.log('Successfully signed up!', res);
+      })
+      .catch(error => {
+        console.log('Something is wrong:', error.message);
+      });    
+  }
+
   logout(): void {
     this.afAuth.auth.signOut();
   }

@@ -69,6 +69,7 @@
           formControlName="logInPassword"
         />
         <button
+          (click)="logInWithEmailAndPassword(logInFormUserName.value, logInFormPassword.value)"
           [ngClass] = "{
             'hover-light hover-text-darkest': logInForm.valid
           }"
@@ -110,7 +111,7 @@
             check_circle
           </span>
         </ng-template>
-        <ng-template [ngIf]="!userNameSignUpInputField .valid">
+        <ng-template [ngIf]="!userNameSignUpInputField.valid">
           <span
             [hidden] = "userNameSignUpInputField.untouched"
             [class.text-red-400]="userNameSignUpInputField.touched"
@@ -210,6 +211,7 @@
           formControlName="signUpRepeatPassword"
         />
         <button
+          (click)="signUp(userNameSignUpInputField.value, passwordRepeatSignUpInputField.value)"
           [disabled]="!signUpForm.valid"
           [ngClass] = "{
             'hover-light hover-text-darkest': signUpForm.valid
