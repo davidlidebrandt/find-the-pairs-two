@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-leader-board',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leader-board.component.css']
 })
 export class LeaderBoardComponent implements OnInit {
-
-  constructor() { }
+  data: any = [];
+  
+  constructor(private dataService: DataService) { 
+    console.log("h")
+    this.dataService.createTest()
+    const ref = this.dataService.getData();
+    ref.valueChanges().subscribe((data) => {
+      this.data = data;
+      console.log(this.data)
+      
+    })
+  }
 
   ngOnInit(): void {
+ 
   }
 
 }

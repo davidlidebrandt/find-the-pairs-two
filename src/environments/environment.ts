@@ -7,6 +7,7 @@ export const environment = {
   firebase: {
     apiKey: "AIzaSyBCbaE4iwSzCdPIxtk5E1VvG5-x-tK7Upw",
     authDomain: "find-the-pairs-two.firebaseapp.com",
+    databaseURL: "https://find-the-pairs-two-default-rtdb.europe-west1.firebasedatabase.app/",
     projectId: "find-the-pairs-two",
     storageBucket: "find-the-pairs-two.appspot.com",
     messagingSenderId: "703321968049",

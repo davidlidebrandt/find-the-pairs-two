@@ -24,6 +24,10 @@
         <td class="block col-span-6 box-shadow mx-1 medium">Some</td>
         <td class="block col-span-6 box-shadow mr-1 medium">300</td>
       </tr>
+      <tr *ngFor="let item of data" class="m-auto w-full grid grid-cols-12 font-bold my-1">
+        <td class="block col-span-6 box-shadow mx-1 medium">{{ item }}</td>
+        <td class="block col-span-6 box-shadow mr-1 medium">300</td>
+      </tr>
     </tbody>
   </table>
 

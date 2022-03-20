@@ -17,7 +17,6 @@ export class UserAuthService {
     this.user = this.afAuth.authState;
    }
 
-  
 
   login():void {
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
