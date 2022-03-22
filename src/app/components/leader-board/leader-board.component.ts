@@ -10,7 +10,6 @@ export class LeaderBoardComponent implements OnInit {
   data: any = [];
   
   constructor(private dataService: DataService) { 
-    console.log("h")
     this.dataService.createTest()
     const ref = this.dataService.getData();
     ref.valueChanges().subscribe((data) => {

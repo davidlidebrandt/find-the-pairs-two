@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameServiceService } from 'src/app/services/game-service.service';
 import { WarningConfirmedPaths } from 'src/app/components/game-warning-modal/game-warning-modal.component';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-game',
@@ -9,7 +10,7 @@ import { WarningConfirmedPaths } from 'src/app/components/game-warning-modal/gam
 })
 export class GameComponent implements OnInit {
 
-  constructor(public game:GameServiceService) { }
+  constructor(public game:GameServiceService, public messageService:MessageService) { }
 
   ngOnInit(): void {
   }

@@ -28,6 +28,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 import { GameWarningModalComponent } from './components/game-warning-modal/game-warning-modal.component'
 import { environment } from 'src/environments/environment';
+import { MessageComponent } from './components/message/message.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { environment } from 'src/environments/environment';
     SettingsComponent,
     LoginSignupComponent,
     GameWarningModalComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
