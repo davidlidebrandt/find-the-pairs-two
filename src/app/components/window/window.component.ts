@@ -1,5 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'src/app/services/message.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 @Component({
   selector: 'app-window',
@@ -8,13 +9,15 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class WindowComponent implements OnInit {
 
-  constructor(private auth: UserAuthService) { }
+  constructor(private auth: UserAuthService, private messageService: MessageService) { }
 
   ngOnInit(): void {
   }
 
   logout():void {
     this.auth.logout();
+    this.messageService.setCurrentMessage("You successfully logged out");
+    this.messageService.displayMessage();
   }
 
   mainWindowHidden: boolean = false;

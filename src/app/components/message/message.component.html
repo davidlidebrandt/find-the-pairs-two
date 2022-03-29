@@ -1,1 +1,14 @@
-<div class="absolute top-0 left-4">{{ messageService.getCurrentMessage() }}</div>
+<div [ngClass]="{'hidden': messageService.hidden}" class="text-white absolute top-16 rounded left-10 light h-48 w-48">
+    {{ messageService.getCurrentMessage() }}
+    <ng-template [ngIf]="messageService.error">
+        <span class="material-icons align-middle text-red-400">
+            error
+        </span>
+    </ng-template>
+    <ng-template [ngIf]="!messageService.error">
+        <span class="material-icons align-middle text-green-400">
+            check_circle
+          </span>
+    </ng-template>
+</div>
+ 
